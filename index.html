@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kids Country Poster Board Builder • Learn While Doing!</title>
+  <title>Kids Country Poster Board Builder • North Beach Elementary</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -24,22 +24,18 @@
       <div class="flex items-center gap-2">
         <span class="text-2xl">🌎</span>
         <div>
-          <h1 class="text-base md:text-lg font-black tracking-tight leading-tight">Country Poster Board Kit Builder</h1>
-          <p class="text-[11px] text-slate-300">Create standard 28″ × 22″ school boards &amp; 8.5″ × 11″ coloring sheets • Learn while doing!</p>
+          <h1 class="text-base md:text-lg font-black tracking-tight leading-tight">Kids Country Poster Board Builder</h1>
+          <p class="text-[11px] text-slate-300">North Beach Elementary &amp; Culture Displays • 28″×22″ Boards &amp; 8.5″×11″ Printouts</p>
         </div>
       </div>
       
       <div class="flex items-center gap-2">
+        <button onclick="openQuizModal()" class="px-3.5 py-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-xs md:text-sm rounded-xl shadow flex items-center gap-1.5 transition transform hover:scale-105">
+          <span>🧭</span> <span>Take Country Quiz</span>
+        </button>
         <button onclick="window.print()" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs md:text-sm rounded-xl shadow flex items-center gap-1.5 transition">
           <span>🖨️</span> <span>Print 8.5″×11″ Sheets</span>
         </button>
-        <button onclick="exportProjectJSON()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs rounded-xl border border-slate-700 flex items-center gap-1 transition">
-          <span>💾</span> <span class="hidden sm:inline">Save</span>
-        </button>
-        <label class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs rounded-xl border border-slate-700 flex items-center gap-1 cursor-pointer transition">
-          <span>📂</span> <span class="hidden sm:inline">Load</span>
-          <input type="file" accept=".json" class="hidden" onchange="importProjectJSON(event)">
-        </label>
       </div>
     </div>
   </header>
@@ -47,19 +43,45 @@
   <!-- MAIN APP CONTAINER -->
   <main class="max-w-7xl mx-auto p-4 md:p-6 space-y-10">
 
+    <!-- HERO WELCOME BANNER (Screen Only) -->
+    <section class="no-print bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 text-white rounded-3xl p-6 md:p-8 shadow-xl relative overflow-hidden">
+      <div class="max-w-3xl space-y-3 relative z-10">
+        <span class="bg-blue-500/40 text-blue-100 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+          For Students, Parents &amp; Teachers 🎒
+        </span>
+        <h2 class="text-2xl md:text-4xl font-black tracking-tight leading-tight">
+          Create Your Custom Country Poster Board in Minutes!
+        </h2>
+        <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
+          Not sure which country to do? Take our quick 4-question explorer quiz! Already have an assigned country? Enter your name, pick your favorite famous hero, choose 3 fun facts, and print your ready-to-color 8.5″ × 11″ poster sheets!
+        </p>
+        <div class="pt-2 flex flex-wrap gap-3">
+          <button onclick="openQuizModal()" class="px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs md:text-sm rounded-xl shadow-lg transition flex items-center gap-1.5">
+            <span>🧭</span> <span>Help Me Pick a Country (Take Quiz)</span>
+          </button>
+          <a href="#builder-studio" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold text-xs md:text-sm rounded-xl border border-white/30 transition flex items-center gap-1.5">
+            <span>✏️</span> <span>I Already Have My Country</span>
+          </a>
+        </div>
+      </div>
+      <div class="absolute -right-10 -bottom-10 opacity-15 text-[180px] pointer-events-none select-none">
+        🌍
+      </div>
+    </section>
+
     <!-- BUILDER WIZARD & CONTROLS (Screen Only) -->
-    <section class="no-print bg-white rounded-3xl p-5 md:p-7 shadow-lg border border-slate-200 space-y-6">
+    <section id="builder-studio" class="no-print bg-white rounded-3xl p-5 md:p-7 shadow-lg border border-slate-200 space-y-6">
       
-      <!-- Explorer Header -->
+      <!-- Studio Header -->
       <div class="border-b pb-4 flex flex-wrap justify-between items-center gap-2">
         <div>
           <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Interactive Kid &amp; Family Studio</span>
-          <h2 class="text-2xl font-black text-slate-900">Customize Your Country Adventure</h2>
-          <p class="text-xs text-slate-500">Pick your country, choose your famous hero, and select 3 fun facts to build your custom poster kit.</p>
+          <h2 class="text-2xl font-black text-slate-900">Customize Your Poster Kit</h2>
+          <p class="text-xs text-slate-500">Every student gets their name in giant colorable bubble letters on the main banner!</p>
         </div>
         <div class="flex gap-2">
           <a href="#board-preview" class="text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-lg border flex items-center gap-1">
-            <span>🖼️</span> View Poster Mockup
+            <span>🖼️</span> View Board Mockup
           </a>
           <a href="#printable-sheets" class="text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-lg border flex items-center gap-1">
             <span>📄</span> View Printable Sheets
@@ -74,7 +96,7 @@
         </label>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
           <div>
-            <label class="block text-[11px] font-bold text-slate-600 mb-0.5">Student's First Name</label>
+            <label class="block text-[11px] font-bold text-slate-600 mb-0.5">Student's Name</label>
             <input type="text" id="input-student-name" class="w-full text-xs font-semibold px-3 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="e.g. Izzy">
           </div>
           <div>
@@ -82,7 +104,7 @@
             <input type="text" id="input-school-name" class="w-full text-xs font-semibold px-3 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="e.g. North Beach Elementary">
           </div>
           <div>
-            <label class="block text-[11px] font-bold text-slate-600 mb-0.5">Grade Level</label>
+            <label class="block text-[11px] font-bold text-slate-600 mb-0.5">Grade Level / Teacher</label>
             <input type="text" id="input-grade" class="w-full text-xs font-semibold px-3 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="e.g. Kindergarten">
           </div>
           <div>
@@ -94,11 +116,16 @@
 
       <!-- STEP 2: Choose Country -->
       <div class="space-y-2">
-        <label class="text-xs font-black text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
-          <span>2️⃣</span> Choose a Country to Explore:
-        </label>
+        <div class="flex justify-between items-center">
+          <label class="text-xs font-black text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+            <span>2️⃣</span> Choose Your Country:
+          </label>
+          <button onclick="openQuizModal()" class="text-xs text-blue-600 hover:text-blue-800 font-bold flex items-center gap-1">
+            <span>🧭</span> Don't know? Take the quiz!
+          </button>
+        </div>
         <div id="country-pills" class="flex flex-wrap gap-2">
-          <!-- Dynamic Country Buttons inserted by app.js -->
+          <!-- Populated by app.js with 12 preset countries -->
         </div>
       </div>
 
@@ -188,7 +215,7 @@
               </svg>
             </div>
             <p id="mockup-banner-subtitle" class="text-xs font-semibold text-slate-700 mt-1">
-              Featuring: Food, Music, History, Bad Bunny &amp; The Coquí Frog! 🇵🇷
+              Featuring: Food, Music, History, Famous Heroes &amp; Culture! 🇵🇷
             </p>
           </div>
 
@@ -199,13 +226,13 @@
             <div id="mock-card-1" class="bg-white border-2 border-blue-400 rounded-xl p-2.5 flex flex-col justify-between shadow-sm h-64">
               <div class="flex items-center justify-between border-b pb-1">
                 <span class="mock-title font-extrabold text-blue-800 text-xs">1. Country Info 🌍</span>
-                <span class="mock-tag text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded font-bold">San Juan</span>
+                <span class="mock-tag text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded font-bold">Capital</span>
               </div>
               <div class="flex-1 my-1 overflow-hidden rounded border flex items-center justify-center bg-white p-1">
                 <img class="mock-img h-full w-full object-contain" src="pr_flag_map_bw_1791649663152.jpg" alt="Country Info">
               </div>
               <div class="mock-summary text-[11px] leading-tight text-slate-600 flex justify-between pt-1">
-                <span><strong>Capital:</strong> San Juan</span>
+                <span><strong>Capital:</strong> City</span>
               </div>
             </div>
 
@@ -213,13 +240,13 @@
             <div id="mock-card-2" class="bg-white border-2 border-amber-400 rounded-xl p-2.5 flex flex-col justify-between shadow-sm h-64">
               <div class="flex items-center justify-between border-b pb-1">
                 <span class="mock-title font-extrabold text-amber-800 text-xs">2. Food &amp; Drink 🍲</span>
-                <span class="mock-tag text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-bold">Mofongo</span>
+                <span class="mock-tag text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-bold">Food</span>
               </div>
               <div class="flex-1 my-1 overflow-hidden rounded border flex items-center justify-center bg-white p-1">
                 <img class="mock-img h-full w-full object-contain" src="mofongo_malta_coloring_1791649366385.jpg" alt="Food & Drink">
               </div>
               <div class="mock-summary text-[11px] leading-tight text-slate-600 flex justify-between pt-1">
-                <span><strong>Dish:</strong> Mofongo</span>
+                <span><strong>Dish:</strong> Main Dish</span>
               </div>
             </div>
 
@@ -227,13 +254,13 @@
             <div id="mock-card-3" class="bg-white border-2 border-purple-400 rounded-xl p-2.5 flex flex-col justify-between shadow-sm h-64">
               <div class="flex items-center justify-between border-b pb-1">
                 <span class="mock-title font-extrabold text-purple-800 text-xs">3. Music &amp; Dance 🎵</span>
-                <span class="mock-tag text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-bold">Bomba</span>
+                <span class="mock-tag text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-bold">Music</span>
               </div>
               <div class="flex-1 my-1 overflow-hidden rounded border flex items-center justify-center bg-white p-1">
                 <img class="mock-img h-full w-full object-contain" src="bomba_dance_coloring_1791649428063.jpg" alt="Music & Dance">
               </div>
               <div class="mock-summary text-[11px] leading-tight text-slate-600 flex justify-between pt-1">
-                <span><strong>Dance:</strong> Bomba &amp; Plena</span>
+                <span><strong>Dance:</strong> Folk Dance</span>
               </div>
             </div>
 
@@ -241,13 +268,13 @@
             <div id="mock-card-4" class="bg-white border-2 border-rose-400 rounded-xl p-2.5 flex flex-col justify-between shadow-sm h-64">
               <div class="flex items-center justify-between border-b pb-1">
                 <span class="mock-title font-extrabold text-rose-800 text-xs">4. Clothing 👗</span>
-                <span class="mock-tag text-[10px] bg-rose-100 text-rose-700 px-1.5 py-0.5 rounded font-bold">Traje de Jíbaro</span>
+                <span class="mock-tag text-[10px] bg-rose-100 text-rose-700 px-1.5 py-0.5 rounded font-bold">Clothing</span>
               </div>
               <div class="flex-1 my-1 overflow-hidden rounded border flex items-center justify-center bg-white p-1">
                 <img class="mock-img h-full w-full object-contain" src="traditional_clothing_coloring_1791649442768.jpg" alt="Clothing">
               </div>
               <div class="mock-summary text-[11px] leading-tight text-slate-600 flex justify-between pt-1">
-                <span><strong>Style:</strong> Jíbaro Hat &amp; Dress</span>
+                <span><strong>Style:</strong> Traditional</span>
               </div>
             </div>
 
@@ -255,13 +282,13 @@
             <div id="mock-card-5" class="bg-white border-2 border-emerald-400 rounded-xl p-2.5 flex flex-col justify-between shadow-sm h-64">
               <div class="flex items-center justify-between border-b pb-1">
                 <span class="mock-title font-extrabold text-emerald-800 text-xs">5. Culture 🎉</span>
-                <span class="mock-tag text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-bold">Vejigante</span>
+                <span class="mock-tag text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-bold">Art</span>
               </div>
               <div class="flex-1 my-1 overflow-hidden rounded border flex items-center justify-center bg-white p-1">
                 <img class="mock-img h-full w-full object-contain" src="vejigante_mask_coloring_1791649380499.jpg" alt="Culture">
               </div>
               <div class="mock-summary text-[11px] leading-tight text-slate-600 flex justify-between pt-1">
-                <span><strong>Art:</strong> Carnival Mask</span>
+                <span><strong>Art:</strong> Festival Art</span>
               </div>
             </div>
 
@@ -269,13 +296,13 @@
             <div id="mock-card-6" class="bg-white border-2 border-indigo-400 rounded-xl p-2.5 flex flex-col justify-between shadow-sm h-64">
               <div class="flex items-center justify-between border-b pb-1">
                 <span class="mock-title font-extrabold text-indigo-800 text-xs">6. Landmarks 🏰</span>
-                <span class="mock-tag text-[10px] bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded font-bold">El Morro</span>
+                <span class="mock-tag text-[10px] bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded font-bold">Landmark</span>
               </div>
               <div class="flex-1 my-1 overflow-hidden rounded border flex items-center justify-center bg-white p-1">
                 <img class="mock-img h-full w-full object-contain" src="castillo_el_morro_bw_1791649678009.jpg" alt="Landmarks">
               </div>
               <div class="mock-summary text-[11px] leading-tight text-slate-600 flex justify-between pt-1">
-                <span><strong>Fort:</strong> Castillo San Felipe</span>
+                <span><strong>Site:</strong> Historic Wonder</span>
               </div>
             </div>
 
@@ -283,7 +310,7 @@
             <div id="mock-card-7" class="bg-white border-2 border-violet-400 rounded-xl p-2.5 flex flex-col justify-between shadow-sm h-64">
               <div class="flex items-center justify-between border-b pb-1">
                 <span class="mock-title font-extrabold text-violet-800 text-xs">7. Famous Person ⭐</span>
-                <span class="mock-tag text-[10px] bg-violet-100 text-violet-700 px-1.5 py-0.5 rounded font-bold">Star</span>
+                <span class="mock-tag text-[10px] bg-violet-100 text-violet-700 px-1.5 py-0.5 rounded font-bold">Hero</span>
               </div>
               <div class="flex-1 my-1 overflow-hidden rounded border flex items-center justify-center bg-white p-1">
                 <img class="mock-img h-full w-full object-contain" src="bad_bunny_landscape_1791650572668.jpg" alt="Famous Person">
@@ -317,7 +344,7 @@
                 <!-- 3 Mini Fact Thumbnails inserted by app.js -->
               </div>
               <div class="mock-summary text-[10px] leading-tight text-slate-600 text-center pt-1 truncate">
-                Glowing waters • Airport applause • Pirate caves!
+                3 Amazing Facts!
               </div>
             </div>
 
@@ -345,7 +372,7 @@
       <!-- Top Print Bar (Screen Only) -->
       <div class="no-print max-w-4xl mx-auto bg-emerald-50 border border-emerald-200 p-4 rounded-2xl flex items-center justify-between shadow-sm">
         <div>
-          <h3 class="font-bold text-emerald-900 text-base">Print Preview (5 Calibrated Letter Sheets)</h3>
+          <h3 class="font-bold text-emerald-900 text-base">Print Preview (6 Calibrated Letter Sheets)</h3>
           <p class="text-xs text-emerald-700">Sheet 1 prints vertically (rotated 90°) for a giant 9.8″ × 4.8″ banner. All cards feature pure white interiors for coloring!</p>
         </div>
         <button onclick="window.print()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-black text-sm rounded-xl shadow transition flex items-center gap-1.5">
@@ -399,7 +426,7 @@
                 🌴 San Juan, Puerto Rico
               </text>
               <text id="svg-banner-sub2" x="490" y="405" text-anchor="middle" font-family="'Arial', sans-serif" font-weight="bold" font-size="18" fill="#334155">
-                ⭐ Food • Music • History • Bad Bunny ⭐
+                ⭐ Food • Music • History • Culture ⭐
               </text>
               <text id="svg-banner-sub3" x="810" y="405" text-anchor="middle" font-family="'Arial', sans-serif" font-weight="bold" font-size="18" fill="#334155">
                 🌺 Isla del Encanto
@@ -420,7 +447,7 @@
         <div id="sheet-card-1" class="poster-card rounded-xl p-3.5 bg-white flex flex-col justify-between">
           <div class="flex justify-between items-center border-b-2 border-slate-900 pb-1 mb-2">
             <h2 class="card-title text-base font-black uppercase text-slate-900">1. Country Information</h2>
-            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Puerto Rico</span>
+            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Country</span>
           </div>
           <div class="flex gap-3 flex-1 items-stretch overflow-hidden">
             <div class="card-img-box">
@@ -430,7 +457,7 @@
               <p><strong>Country Name:</strong><br>Puerto Rico</p>
               <p><strong>Nickname:</strong><br>Isla del Encanto</p>
               <p><strong>Capital City:</strong><br>San Juan ⭐</p>
-              <p><strong>Continent / Region:</strong><br>Caribbean (North America)</p>
+              <p><strong>Continent / Region:</strong><br>Caribbean</p>
             </div>
           </div>
         </div>
@@ -439,16 +466,16 @@
         <div id="sheet-card-2" class="poster-card rounded-xl p-3.5 bg-white flex flex-col justify-between">
           <div class="flex justify-between items-center border-b-2 border-slate-900 pb-1 mb-2">
             <h2 class="card-title text-base font-black uppercase text-slate-900">2. Food &amp; Drink</h2>
-            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Mofongo</span>
+            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Food</span>
           </div>
           <div class="flex gap-3 flex-1 items-stretch overflow-hidden">
             <div class="card-img-box">
               <img class="card-img" src="mofongo_malta_coloring_1791649366385.jpg" alt="Food & Drink">
             </div>
             <div class="card-info-box card-bullets text-xs leading-relaxed text-slate-700 space-y-2">
-              <p><strong>Main Dish:</strong><br>Mofongo (mashed plantains with garlic in a wooden pilón bowl!)</p>
-              <p><strong>Sweet Treat:</strong><br>Piragua (shaved ice drizzled with tropical fruit syrup)</p>
-              <p><strong>Favorite Drink:</strong><br>Malta India (fizzy, sweet malt beverage)</p>
+              <p><strong>Main Dish:</strong><br>Traditional dish</p>
+              <p><strong>Sweet Treat:</strong><br>Dessert</p>
+              <p><strong>Favorite Drink:</strong><br>Drink</p>
             </div>
           </div>
         </div>
@@ -465,16 +492,15 @@
         <div id="sheet-card-3" class="poster-card rounded-xl p-3.5 bg-white flex flex-col justify-between">
           <div class="flex justify-between items-center border-b-2 border-slate-900 pb-1 mb-2">
             <h2 class="card-title text-base font-black uppercase text-slate-900">3. Music &amp; Dance</h2>
-            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Bomba</span>
+            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Music</span>
           </div>
           <div class="flex gap-3 flex-1 items-stretch overflow-hidden">
             <div class="card-img-box">
               <img class="card-img" src="bomba_dance_coloring_1791649428063.jpg" alt="Music & Dance">
             </div>
             <div class="card-info-box card-bullets text-xs leading-relaxed text-slate-700 space-y-2">
-              <p><strong>Folk Dance:</strong><br>Bomba (dancers challenge drummers with swishing skirts!)</p>
-              <p><strong>Storytelling Beat:</strong><br>Plena ("the singing newspaper" of the island)</p>
-              <p><strong>Instruments:</strong><br>Maracas, Barril drums, and Güiro scraper</p>
+              <p><strong>Folk Dance:</strong><br>Traditional dance</p>
+              <p><strong>Instruments:</strong><br>Instruments</p>
             </div>
           </div>
         </div>
@@ -483,16 +509,15 @@
         <div id="sheet-card-4" class="poster-card rounded-xl p-3.5 bg-white flex flex-col justify-between">
           <div class="flex justify-between items-center border-b-2 border-slate-900 pb-1 mb-2">
             <h2 class="card-title text-base font-black uppercase text-slate-900">4. Traditional Clothing</h2>
-            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Traje de Jíbaro</span>
+            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Clothing</span>
           </div>
           <div class="flex gap-3 flex-1 items-stretch overflow-hidden">
             <div class="card-img-box">
               <img class="card-img" src="traditional_clothing_coloring_1791649442768.jpg" alt="Clothing">
             </div>
             <div class="card-info-box card-bullets text-xs leading-relaxed text-slate-700 space-y-2">
-              <p><strong>Boy's Outfit:</strong><br>Straw pava hat, crisp white shirt &amp; red bandana sash</p>
-              <p><strong>Girl's Outfit:</strong><br>Flowing white dress with ruffles &amp; hibiscus flowers</p>
-              <p><strong>Heritage:</strong><br>Jíbaro pride celebrating mountain farmers</p>
+              <p><strong>Traditional Outfit:</strong><br>Description</p>
+              <p><strong>Heritage:</strong><br>Tradition</p>
             </div>
           </div>
         </div>
@@ -509,16 +534,15 @@
         <div id="sheet-card-5" class="poster-card rounded-xl p-3.5 bg-white flex flex-col justify-between">
           <div class="flex justify-between items-center border-b-2 border-slate-900 pb-1 mb-2">
             <h2 class="card-title text-base font-black uppercase text-slate-900">5. Culture &amp; Festival</h2>
-            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Vejigante Masks</span>
+            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Culture</span>
           </div>
           <div class="flex gap-3 flex-1 items-stretch overflow-hidden">
             <div class="card-img-box">
               <img class="card-img" src="vejigante_mask_coloring_1791649380499.jpg" alt="Culture">
             </div>
             <div class="card-info-box card-bullets text-xs leading-relaxed text-slate-700 space-y-2">
-              <p><strong>Carnival Tradition:</strong><br>Vejigante masks for Ponce Carnival &amp; Fiesta Santiago</p>
-              <p><strong>How It's Made:</strong><br>Papier-mâché or dried coconuts with colorful horns!</p>
-              <p><strong>Style:</strong><br>Bold polka dots, wild smiling teeth &amp; vibrant parades</p>
+              <p><strong>Festival:</strong><br>Celebration</p>
+              <p><strong>Art Tradition:</strong><br>Art</p>
             </div>
           </div>
         </div>
@@ -527,16 +551,15 @@
         <div id="sheet-card-6" class="poster-card rounded-xl p-3.5 bg-white flex flex-col justify-between">
           <div class="flex justify-between items-center border-b-2 border-slate-900 pb-1 mb-2">
             <h2 class="card-title text-base font-black uppercase text-slate-900">6. Historic Landmarks</h2>
-            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">El Morro</span>
+            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Landmark</span>
           </div>
           <div class="flex gap-3 flex-1 items-stretch overflow-hidden">
             <div class="card-img-box">
               <img class="card-img" src="castillo_el_morro_bw_1791649678009.jpg" alt="Landmarks">
             </div>
             <div class="card-info-box card-bullets text-xs leading-relaxed text-slate-700 space-y-2">
-              <p><strong>Seaside Fortress:</strong><br>Castillo San Felipe del Morro (built over 400 years ago!)</p>
-              <p><strong>Iconic Tower:</strong><br>Garitas (sentry lookout towers perched over the ocean)</p>
-              <p><strong>Fun Tradition:</strong><br>Kids fly giant colorful kites on the sprawling grassy lawn</p>
+              <p><strong>Wonder:</strong><br>Historic Wonder</p>
+              <p><strong>Fun Tradition:</strong><br>Tradition</p>
             </div>
           </div>
         </div>
@@ -553,17 +576,16 @@
         <div id="sheet-card-7" class="poster-card rounded-xl p-3.5 bg-white flex flex-col justify-between">
           <div class="flex justify-between items-center border-b-2 border-slate-900 pb-1 mb-2">
             <h2 class="card-title text-base font-black uppercase text-slate-900">7. Famous Person</h2>
-            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Bad Bunny</span>
+            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Hero</span>
           </div>
           <div class="flex gap-3 flex-1 items-stretch overflow-hidden">
             <div class="card-img-box">
               <img class="card-img" src="bad_bunny_landscape_1791650572668.jpg" alt="Famous Person">
             </div>
             <div class="card-info-box card-bullets text-xs leading-relaxed text-slate-700 space-y-2">
-              <p><strong>Full Name:</strong><br>Benito Antonio Martínez Ocasio</p>
-              <p><strong>Born:</strong><br>Vega Baja, Puerto Rico</p>
-              <p><strong>Achievement:</strong><br>Grammy winner &amp; global music superstar</p>
-              <p><strong>Superpower:</strong><br>Celebrates island culture and wears the traditional pava hat</p>
+              <p><strong>Name:</strong><br>Hero Name</p>
+              <p><strong>Achievement:</strong><br>Achievement</p>
+              <p><strong>Kid Superpower:</strong><br>Superpower</p>
             </div>
           </div>
         </div>
@@ -572,16 +594,16 @@
         <div id="sheet-card-8" class="poster-card rounded-xl p-3.5 bg-white flex flex-col justify-between">
           <div class="flex justify-between items-center border-b-2 border-slate-900 pb-1 mb-2">
             <h2 class="card-title text-base font-black uppercase text-slate-900">8. Language &amp; Nature</h2>
-            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Coquí Frog</span>
+            <span class="card-tag text-xs font-bold border border-slate-800 px-2 py-0.5 rounded">Mascot</span>
           </div>
           <div class="flex gap-3 flex-1 items-stretch overflow-hidden">
             <div class="card-img-box">
               <img class="card-img" src="coqui_frog_coloring_1791649457119.jpg" alt="Language & Nature">
             </div>
             <div class="card-info-box card-bullets text-xs leading-relaxed text-slate-700 space-y-2">
-              <p><strong>Official Language:</strong><br>Spanish &amp; English</p>
-              <p><strong>Island Mascot:</strong><br>Tiny Coquí frog (sings "¡Ko-Kee!" at sunset)</p>
-              <p><strong>Island Cheer:</strong><br>¡Wepa! (expresses pure joy &amp; celebration!)</p>
+              <p><strong>Official Language:</strong><br>Spanish</p>
+              <p><strong>Mascot Creature:</strong><br>Creature</p>
+              <p><strong>Cheer Word:</strong><br>Cheer</p>
             </div>
           </div>
         </div>
@@ -590,7 +612,7 @@
       <!-- SHEET 6: CARD 9 (3 CHOSEN FUN FACTS) + PRESENTATION CUE CARDS -->
       <div class="page-sheet bg-white p-6 rounded-2xl shadow-md border-2 border-dashed border-slate-400 flex flex-col justify-between">
         <div class="flex justify-between items-center text-xs text-slate-400 font-mono">
-          <span>SHEET 6: CATEGORY 9 (3 FUN FACTS) &amp; KID PRESENTATION CUE CARDS</span>
+          <span>SHEET 6: CATEGORY 9 (3 FUN FACTS) &amp; PRESENTATION CUE CARDS</span>
           <span>CARD: 7.7″ W × 4.8″ H</span>
         </div>
         
@@ -610,23 +632,23 @@
         <!-- Student Presentation Cue Cards (Cutout Helpers for 5-Year-Olds!) -->
         <div class="border-2 border-dashed border-amber-400 rounded-xl p-3 bg-amber-50/50 flex flex-col justify-between h-[4.8in]">
           <div class="flex justify-between items-center border-b border-amber-300 pb-1">
-            <span class="text-xs font-black text-amber-900 uppercase">🎤 Izzy's Presentation Cue Cards (Cut Out to Hold During Class Speech!)</span>
+            <span class="text-xs font-black text-amber-900 uppercase">🎤 Student Presentation Cue Cards (Cut Out to Hold During Class Speech!)</span>
             <span class="text-[10px] bg-amber-200 text-amber-800 px-2 py-0.5 rounded font-bold">Pocket Cue Cards</span>
           </div>
           <div class="grid grid-cols-2 gap-3 flex-1 my-2">
             <div class="bg-white border border-amber-300 rounded-lg p-2.5 flex flex-col justify-between text-xs">
               <span class="font-bold text-amber-900">Card A: Introduction</span>
-              <p class="text-slate-700 leading-relaxed italic">
+              <p id="cue-card-a-text" class="text-slate-700 leading-relaxed italic">
                 "¡Hola! My name is <strong>Izzy</strong> and I am in Kindergarten! Today I am presenting <strong>Puerto Rico</strong>, the Isla del Encanto!"
               </p>
-              <span class="text-[10px] text-slate-400">Smile &amp; show your flag! 🇵🇷</span>
+              <span class="text-[10px] text-slate-400">Smile &amp; point to your poster board! ⭐</span>
             </div>
             <div class="bg-white border border-amber-300 rounded-lg p-2.5 flex flex-col justify-between text-xs">
-              <span class="font-bold text-amber-900">Card B: My Favorite Thing</span>
-              <p class="text-slate-700 leading-relaxed italic">
-                "My favorite hero is <strong>Bad Bunny</strong>, and my favorite treat is <strong>Piragua</strong>! Did you know the waters glow bright blue at night?!"
+              <span class="font-bold text-amber-900">Card B: My Favorite Things</span>
+              <p id="cue-card-b-text" class="text-slate-700 leading-relaxed italic">
+                "My favorite hero is <strong>Bad Bunny</strong>, and my favorite food is <strong>Mofongo</strong>! Did you know the waters glow bright blue at night?!"
               </p>
-              <span class="text-[10px] text-slate-400">Say: "¡Muchas Gracias! ¡Wepa!" ⭐</span>
+              <span class="text-[10px] text-slate-400">Say: "¡Muchas Gracias!" and take a bow! ❤️</span>
             </div>
           </div>
           <div class="text-[10px] text-amber-800 text-center border-t border-amber-200 pt-1">
@@ -639,7 +661,19 @@
 
   </main>
 
-  <!-- APP LOGIC SCRIPT -->
+  <!-- INTERACTIVE COUNTRY QUIZ MODAL -->
+  <div id="country-quiz-modal" class="hidden fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border-4 border-blue-500 relative animate-in fade-in zoom-in duration-200">
+      <button onclick="closeQuizModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 font-black text-xl p-1">
+        ✕
+      </button>
+      <div id="quiz-step-content">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- APP SCRIPT -->
   <script src="app.js"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 /**
- * Country Poster Board Builder & Kid Learning Tool
- * For Kindergarten & Elementary School Culture Displays
+ * Kids Country Poster Board Builder & Interactive Learning Tool
+ * North Beach Elementary & Culture Displays
  */
 
-// Helper to generate SVG coloring line-art data URIs for countries without pre-rendered JPGs
+// Helper to generate SVG coloring line-art data URIs
 function generateOutlineSvg(symbol, title, subtitle) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
     <rect width="100%" height="100%" fill="#ffffff" stroke="#0f172a" stroke-width="4"/>
@@ -15,12 +15,12 @@ function generateOutlineSvg(symbol, title, subtitle) {
     <circle cx="200" cy="380" r="16" fill="#ffffff" stroke="#000000" stroke-width="3"/>
     <circle cx="300" cy="380" r="16" fill="#ffffff" stroke="#000000" stroke-width="3"/>
     <circle cx="400" cy="380" r="16" fill="#ffffff" stroke="#000000" stroke-width="3"/>
-    <text x="300" y="420" text-anchor="middle" font-family="'Arial', sans-serif" font-size="12" fill="#94a3b8">Ready for Izzy &amp; Friends to Color!</text>
+    <text x="300" y="420" text-anchor="middle" font-family="'Arial', sans-serif" font-size="12" fill="#94a3b8">Ready for Coloring!</text>
   </svg>`;
   return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
 }
 
-// Preset Country Data Catalog
+// 12 Countries Comprehensive Catalog
 const COUNTRY_DATA = {
   pr: {
     id: "pr",
@@ -32,9 +32,7 @@ const COUNTRY_DATA = {
     region: "Caribbean (North America)",
     greeting: "¡Hola!",
     cheer: "¡Wepa!",
-    kidIntro: "Puerto Rico is a warm tropical island surrounded by turquoise ocean waters with singing tiny frogs and colorful colonial forts!",
-    
-    // Cards 1-6 & 8
+    kidIntro: "A warm tropical island surrounded by turquoise ocean waters with singing tiny frogs and colorful historic forts!",
     card1: {
       title: "1. Country Information",
       tag: "Puerto Rico",
@@ -96,8 +94,6 @@ const COUNTRY_DATA = {
         { label: "Fun Tradition", value: "Kids fly giant colorful kites on the sprawling grassy lawn" }
       ]
     },
-    
-    // Famous Person Choices (Parent & Child can pick!)
     famousPeople: [
       {
         id: "bad_bunny",
@@ -152,8 +148,6 @@ const COUNTRY_DATA = {
         kidTrivia: "She started dancing when she was your age, and grew up to win every major entertainment award in show business!"
       }
     ],
-
-    // Card 8: Language & Nature
     card8: {
       title: "8. Language & Nature",
       tag: "Coquí Frog",
@@ -165,8 +159,6 @@ const COUNTRY_DATA = {
         { label: "Island Cheer", value: "¡Wepa! (expresses pure joy, excitement, and celebration!)" }
       ]
     },
-
-    // Card 9: Fun Facts Library (Child picks their 3 favorites!)
     funFacts: [
       {
         id: "glowing_water",
@@ -221,12 +213,11 @@ const COUNTRY_DATA = {
     region: "North America",
     greeting: "¡Hola!",
     cheer: "¡Órale!",
-    kidIntro: "Mexico is a land of towering ancient pyramids, delicious tacos, colorful Mariachi music, and smiling underwater axolotls!",
-    
+    kidIntro: "A magnificent land of towering ancient pyramids, warm delicious tacos, colorful Mariachi bands, and smiling axolotls!",
     card1: {
       title: "1. Country Information",
       tag: "Mexico",
-      img: generateOutlineSvg("🇲🇽", "MEXICO MAP & FLAG", "Eagle, Serpent & Cactus"),
+      img: generateOutlineSvg("🇲🇽", "MEXICO MAP & FLAG", "Golden Eagle & Aztec Roots"),
       bullets: [
         { label: "Country Name", value: "Mexico (Estados Unidos Mexicanos)" },
         { label: "Nickname", value: "Tierra del Sol" },
@@ -284,7 +275,6 @@ const COUNTRY_DATA = {
         { label: "Sun Shadow", value: "On the first day of spring, shadows look like a snake slithering down!" }
       ]
     },
-
     famousPeople: [
       {
         id: "frida_kahlo",
@@ -339,7 +329,6 @@ const COUNTRY_DATA = {
         kidTrivia: "He started drawing monsters and building puppets with clay when he was just 8 years old!"
       }
     ],
-
     card8: {
       title: "8. Language & Nature",
       tag: "Axolotl",
@@ -351,7 +340,6 @@ const COUNTRY_DATA = {
         { label: "Kid Cheer", value: "¡Órale! (used for 'Wow!', 'Awesome!', or 'Let's go!')" }
       ]
     },
-
     funFacts: [
       {
         id: "monarch_butterflies",
@@ -378,14 +366,6 @@ const COUNTRY_DATA = {
         kidExplanation: "Before cars, Aztecs traveled around Mexico City in wooden boats on water canals!"
       },
       {
-        id: "giant_pyramid",
-        title: "Cholula Pyramid",
-        subtitle: "Largest in the World",
-        img: generateOutlineSvg("⛰️", "PYRAMID OF CHOLULA", "Hidden Giant Inside a Mountain"),
-        caption: "The Great Pyramid of Cholula is the largest pyramid monument by volume on Earth!",
-        kidExplanation: "It's so huge that it actually looks like a giant green grassy hill with a church on top!"
-      },
-      {
         id: "smiling_axolotl",
         title: "Smiling Salamander",
         subtitle: "Xochimilco Canals",
@@ -406,27 +386,26 @@ const COUNTRY_DATA = {
     region: "Caribbean",
     greeting: "¡Hola!",
     cheer: "¡Dímelo, qué lo qué!",
-    kidIntro: "The Dominican Republic is a sun-drenched island paradise of swinging palm trees, bouncing Merengue music, and home run baseball heroes!",
-    
+    kidIntro: "An island paradise of swinging palm trees, bouncing Merengue beats, and legendary baseball heroes!",
     card1: {
       title: "1. Country Information",
       tag: "Dominican Republic",
       img: generateOutlineSvg("🇩🇴", "DOMINICAN REPUBLIC", "Hispaniola • Santo Domingo"),
       bullets: [
-        { label: "Country Name", value: "Dominican Republic (República Dominicana)" },
+        { label: "Country Name", value: "Dominican Republic" },
         { label: "Nickname", value: "Quisqueya la Bella" },
-        { label: "Capital City", value: "Santo Domingo ⭐ (oldest European city in Americas)" },
+        { label: "Capital City", value: "Santo Domingo ⭐" },
         { label: "Region", value: "Caribbean (Island of Hispaniola)" }
       ]
     },
     card2: {
       title: "2. Food & Treats",
-      tag: "Mangú & Morir Soñando",
+      tag: "Mangú",
       img: generateOutlineSvg("🍳", "MANGÚ • LOS 3 GOLPES", "Mashed Green Plantains & Salami"),
       bullets: [
-        { label: "National Dish", value: "Mangú (creamy mashed green plantains topped with pickled red onions)" },
+        { label: "National Dish", value: "Mangú (creamy mashed green plantains with pickled red onions)" },
         { label: "Los Tres Golpes", value: "Served with fried Dominican cheese, eggs, and crispy salami!" },
-        { label: "Dream Drink", value: "Morir Soñando ('To Die Dreaming' - cold fresh orange juice mixed with sweet cream)" }
+        { label: "Dream Drink", value: "Morir Soñando ('To Die Dreaming' - cold orange juice & sweet cream)" }
       ]
     },
     card3: {
@@ -469,7 +448,6 @@ const COUNTRY_DATA = {
         { label: "Historic First", value: "Santo Domingo has the oldest cathedral, paved street & hospital in Americas" }
       ]
     },
-
     famousPeople: [
       {
         id: "david_ortiz",
@@ -496,34 +474,19 @@ const COUNTRY_DATA = {
           { label: "Famous Song", value: "'Ojalá Que Llueva Café' ('May It Rain Coffee in the Countryside!')" }
         ],
         kidTrivia: "He wrote a famous song wishing that coffee, tea, and strawberries would rain down from the sky like magic!"
-      },
-      {
-        id: "oscar_de_la_renta",
-        name: "Oscar de la Renta",
-        role: "World-Renowned Fashion Designer",
-        img: generateOutlineSvg("✨", "OSCAR DE LA RENTA", "Iconic Fashion Designer"),
-        bullets: [
-          { label: "Born", value: "Santo Domingo, Dominican Republic" },
-          { label: "Fame", value: "Designed glamorous gowns for first ladies, movie stars, and royalty" },
-          { label: "Inspiration", value: "Used the vivid tropical colors and flowers of his homeland" },
-          { label: "Philanthropy", value: "Built an orphanage and school in Punta Cana for over a thousand kids" }
-        ],
-        kidTrivia: "He grew up smelling tropical island flowers and turned those bright colors into world-famous dresses!"
       }
     ],
-
     card8: {
       title: "8. Language & Nature",
       tag: "Palmchat & Qué Lo Qué",
       img: generateOutlineSvg("🦜", "CIGUA PALMERA & BIRD", "Palmchat Bird & Mangroves"),
       bullets: [
-        { label: "Official Language", value: "Spanish (spoken with a quick, musical Caribbean rhythm!)" },
+        { label: "Official Language", value: "Spanish" },
         { label: "National Bird", value: "Cigua Palmera (Palmchat - builds giant shared apartment nests!)" },
         { label: "Friendly Greeting", value: "¡Qué lo qué! (Dominican slang for 'What's up?!')" },
         { label: "Gemstone", value: "Larimar (a rare sky-blue volcanic stone found nowhere else on Earth!)" }
       ]
     },
-
     funFacts: [
       {
         id: "whale_nursery",
@@ -546,16 +509,8 @@ const COUNTRY_DATA = {
         title: "The Three Hits!",
         subtitle: "Mangú Power Breakfast",
         img: generateOutlineSvg("🍳", "LOS TRES GOLPES", "Salami, Cheese & Fried Eggs"),
-        caption: "The classic Dominican breakfast of Mangú with salami, fried cheese, and eggs is called 'Los Tres Golpes'!",
+        caption: "The classic breakfast of Mangú with salami, cheese, and eggs is called 'Los Tres Golpes'!",
         kidExplanation: "It gives kids super strength for school and tastes amazing with crunchy fried cheese!"
-      },
-      {
-        id: "bible_flag",
-        title: "Unique Flag",
-        subtitle: "Only One with a Bible",
-        img: generateOutlineSvg("📖", "DOMINICAN FLAG", "Coat of Arms & Bible"),
-        caption: "The Dominican Republic flag is the ONLY national flag in the world that features a Bible in its center shield!",
-        kidExplanation: "The coat of arms has a book right in the middle surrounded by palm leaves and arrows!"
       }
     ]
   },
@@ -570,16 +525,15 @@ const COUNTRY_DATA = {
     region: "South America",
     greeting: "¡Hola!",
     cheer: "¡Chévere!",
-    kidIntro: "Colombia is a magical land of green Andean mountains, colorful butterflies, wax palm trees reaching into the clouds, and world-class music!",
-    
+    kidIntro: "A magical land of green Andes mountains, wax palm trees reaching into the clouds, and world-class music!",
     card1: {
       title: "1. Country Information",
       tag: "Colombia",
       img: generateOutlineSvg("🇨🇴", "COLOMBIA MAP & FLAG", "Yellow, Blue & Red • Andes"),
       bullets: [
-        { label: "Country Name", value: "Colombia (República de Colombia)" },
+        { label: "Country Name", value: "Colombia" },
         { label: "Nickname", value: "Tierra de Encanto" },
-        { label: "Capital City", value: "Bogotá ⭐ (high in the Andes mountains)" },
+        { label: "Capital City", value: "Bogotá ⭐" },
         { label: "Continent", value: "South America" }
       ]
     },
@@ -633,7 +587,6 @@ const COUNTRY_DATA = {
         { label: "Stone Terraces", value: "Over 169 stone terraces connected by steep winding jungle staircases" }
       ]
     },
-
     famousPeople: [
       {
         id: "shakira",
@@ -660,33 +613,19 @@ const COUNTRY_DATA = {
           { label: "Inspiration", value: "His books inspired the magical universe of Disney's Encanto!" }
         ],
         kidTrivia: "His grandmother told him bedtime stories filled with magic, which helped him write some of the best books in human history!"
-      },
-      {
-        id: "fernando_botero",
-        name: "Fernando Botero",
-        role: "Famous Painter & Sculptor of 'Boterismo'",
-        img: generateOutlineSvg("🎨", "FERNANDO BOTERO", "Iconic Sculptor of Plump Figures"),
-        bullets: [
-          { label: "Born", value: "Medellín, Colombia" },
-          { label: "Art Style", value: "'Boterismo' - paintings and giant bronze statues of pleasantly plump people and round animals" },
-          { label: "Museums", value: "Donated hundreds of his masterpieces to free public museums for kids in Bogotá and Medellín" }
-        ],
-        kidTrivia: "He loved painting chubby horses, round birds, and laughing plump characters that make kids smile!"
       }
     ],
-
     card8: {
       title: "8. Language & Nature",
       tag: "Condor & Encanto",
       img: generateOutlineSvg("🦅", "ANDEAN CONDOR", "Giant Wings & Yellow Butterflies"),
       bullets: [
         { label: "Official Language", value: "Spanish" },
-        { label: "National Bird", value: "Andean Condor (one of the largest flying birds in the entire world!)" },
+        { label: "National Bird", value: "Andean Condor (one of the largest flying birds in the world!)" },
         { label: "Cheer Word", value: "¡Chévere! (Colombian for 'Super cool!' or 'Awesome!')" },
         { label: "Biodiversity", value: "Home to more bird species and orchid flowers than any nation on Earth!" }
       ]
     },
-
     funFacts: [
       {
         id: "liquid_rainbow",
@@ -697,11 +636,11 @@ const COUNTRY_DATA = {
         kidExplanation: "It looks like a real liquid rainbow flowing through the mountains with pink and red glowing water plants!"
       },
       {
-        id: "encanto_inspiration",
+        id: "encanto_palms",
         title: "Encanto Palms",
         subtitle: "Cocora Valley",
         img: generateOutlineSvg("🌴", "WAX PALM TREES", "Tallest Palm Trees on Earth"),
-        caption: "The Cocora Valley has Wax Palm trees that grow over 200 feet high—the tallest palm trees in the world!",
+        caption: "The Cocora Valley has Wax Palm trees that grow over 200 feet high—the tallest in the world!",
         kidExplanation: "These palm trees grow taller than 15-story buildings and inspired the magic in the movie Encanto!"
       },
       {
@@ -709,159 +648,510 @@ const COUNTRY_DATA = {
         title: "Pink Dolphins",
         subtitle: "Amazon River",
         img: generateOutlineSvg("🐬", "PINK RIVER DOLPHIN", "Amazon Freshwater Dolphins"),
-        caption: "Colombia's Amazon jungle rivers are home to rare freshwater dolphins that are naturally bright pink!",
+        caption: "Colombia's Amazon rivers are home to rare freshwater dolphins that are naturally bright pink!",
         kidExplanation: "They really are bright bubblegum pink and swim playfully through the jungle rivers!"
-      },
-      {
-        id: "magic_butterflies",
-        title: "Butterfly Capital",
-        subtitle: "20% of Earth's Species",
-        img: generateOutlineSvg("🦋", "COLOMBIAN BUTTERFLIES", "Yellow Butterflies of Macondo"),
-        caption: "One out of every five butterfly species in the entire world lives in Colombia!",
-        kidExplanation: "If you walk through a Colombian forest, thousands of shimmering blue and yellow butterflies flutter all around you!"
       }
     ]
   },
 
-  cu: {
-    id: "cu",
-    name: "Cuba",
-    adjective: "Cuban",
-    flagEmoji: "🇨🇺",
-    nickname: "La Perla de las Antillas",
-    capital: "Havana",
-    region: "Caribbean",
+  es: {
+    id: "es",
+    name: "Spain",
+    adjective: "Spanish",
+    flagEmoji: "🇪🇸",
+    nickname: "Tierra de Castillos",
+    capital: "Madrid",
+    region: "Europe (Iberian Peninsula)",
     greeting: "¡Hola!",
-    cheer: "¡Qué bola!",
-    kidIntro: "Cuba is a sunny island of vibrant music, vintage pastel cars, the world's smallest hummingbirds, and joyful celebrations!",
-    
+    cheer: "¡Olé!",
+    kidIntro: "A historic land of magnificent fairytale castles, rhythmic flamenco dancing, warm paella, and brave explorers!",
     card1: {
       title: "1. Country Information",
-      tag: "Cuba",
-      img: generateOutlineSvg("🇨🇺", "CUBA MAP & FLAG", "White Star, Red Triangle & Stripes"),
+      tag: "Spain",
+      img: generateOutlineSvg("🇪🇸", "SPAIN MAP & CASTLES", "Madrid • Red & Yellow"),
       bullets: [
-        { label: "Country Name", value: "Cuba (República de Cuba)" },
-        { label: "Nickname", value: "La Perla de las Antillas" },
-        { label: "Capital City", value: "Havana (La Habana) ⭐" },
-        { label: "Region", value: "Caribbean Sea (Greater Antilles)" }
+        { label: "Country Name", value: "Spain (España)" },
+        { label: "Nickname", value: "Tierra de Castillos" },
+        { label: "Capital City", value: "Madrid ⭐" },
+        { label: "Continent", value: "Europe" }
       ]
     },
     card2: {
       title: "2. Food & Treats",
-      tag: "Ropa Vieja",
-      img: generateOutlineSvg("🥩", "ROPA VIEJA & PLATANOS", "Savory Shredded Beef & Sweet Plantains"),
+      tag: "Paella & Churros",
+      img: generateOutlineSvg("🥘", "PAELLA VALENCIANA", "Saffron Rice & Churros con Chocolate"),
       bullets: [
-        { label: "National Dish", value: "Ropa Vieja (shredded flank steak simmered in sweet bell peppers & tomatoes)" },
-        { label: "Side Dish", value: "Moros y Cristianos (black beans and white rice cooked with garlic)" },
-        { label: "Sweet Treat", value: "Flan de Caramelo & Batido de Mamey (rich tropical fruit milkshake)" }
+        { label: "National Dish", value: "Paella Valenciana (golden saffron rice with vegetables, beans & savory meats)" },
+        { label: "Sweet Treat", value: "Churros con Chocolate (crunchy fried pastry dipped in thick melted chocolate)" },
+        { label: "Snack Style", value: "Tapas (small shared plates for friends and family)" }
       ]
     },
     card3: {
       title: "3. Music & Dance",
-      tag: "Salsa & Son Cubano",
-      img: generateOutlineSvg("🪇", "SALSA & CONGAS", "Bongos, Trumpets & Claves"),
+      tag: "Flamenco",
+      img: generateOutlineSvg("💃", "FLAMENCO & GUITAR", "Spanish Guitar, Castanets & Clapping"),
       bullets: [
-        { label: "Famous Styles", value: "Son Cubano, Mambo, Cha-cha-chá, and lively Afro-Cuban Rumba" },
-        { label: "Secret Beat", value: "The Clave rhythm (two wooden sticks tapping out the heart-beat rhythm)" },
-        { label: "Celebration Shout", value: "'¡Azúcar!' made famous by Celia Cruz!" }
+        { label: "Passionate Art", value: "Flamenco (intense foot-stomping dance with Spanish guitar and hand clapping)" },
+        { label: "Instruments", value: "Acoustic nylon-string guitar and click-clack castanets" },
+        { label: "Cheer", value: "'¡Olé!' shouted when dancers do an incredible move!" }
       ]
     },
     card4: {
       title: "4. Traditional Clothing",
-      tag: "Guayabera",
-      img: generateOutlineSvg("👔", "GUAYABERA SHIRT", "Four Pockets & Cool Linen"),
+      tag: "Traje de Flamenca",
+      img: generateOutlineSvg("👗", "TRAJE DE GITANA", "Polka Dots & Ruffled Skirts"),
       bullets: [
-        { label: "Famous Shirt", value: "Guayabera (crisp, lightweight linen shirt with 4 front pockets and vertical pleats)" },
-        { label: "Why 4 Pockets?", value: "Legend says farmers needed pockets to carry fresh guava fruits home!" },
-        { label: "Elegance", value: "Worn untucked in hot tropical weather for formal events and weddings" }
+        { label: "Feria Dress", value: "Traje de Gitana (dramatic polka-dot ruffled dresses worn for Spring Fair in Seville)" },
+        { label: "Accessories", value: "Mantón shawl with long fringe and large flower hair combs" },
+        { label: "Gentlemen", value: "Traje Corto (fitted short jacket with wide-brimmed Cordobés hat)" }
       ]
     },
     card5: {
       title: "5. Culture & Festival",
-      tag: "Vintage Cars",
-      img: generateOutlineSvg("🚗", "VINTAGE CARS • ALMENDRONES", "Pastel 1950s Classic Convertibles"),
+      tag: "Fiestas & Castles",
+      img: generateOutlineSvg("🏰", "CASTLES OF SPAIN", "Fairytale Alcázar of Segovia"),
       bullets: [
-        { label: "Rolling Museum", value: "Over 60,000 classic 1950s American cars ('Almendrones') still cruise Havana" },
-        { label: "Bright Colors", value: "Painted in candy pink, turquoise, yellow, and sky blue" },
-        { label: "Ingenuity", value: "Cuban mechanics have kept them running smoothly for over 70 years!" }
+        { label: "Fairytale Fort", value: "The Alcázar of Segovia inspired Walt Disney's Cinderella castle!" },
+        { label: "Fabulous Festivals", value: "La Tomatina (giant playful tomato fight in Buñol!)" },
+        { label: "Celebration", value: "Human Towers (Castells) where kids climb to the top of 9-person towers!" }
       ]
     },
     card6: {
       title: "6. Historic Landmarks",
-      tag: "Castillo del Morro",
-      img: generateOutlineSvg("🏰", "CASTILLO DE LOS TRES REYES", "Historic Havana Harbor Lighthouse"),
+      tag: "La Sagrada Família",
+      img: generateOutlineSvg("⛪", "SAGRADA FAMÍLIA", "Antoni Gaudí's Forest Cathedral"),
       bullets: [
-        { label: "Harbor Fortress", value: "Castillo de los Tres Reyes del Morro (built in 1589)" },
-        { label: "Lighthouse", value: "The towering stone lighthouse guards the entrance to Havana Bay" },
-        { label: "Night Cannon", value: "At 9:00 PM every night, soldiers in historic uniforms fire the ceremonial cannon ('El Cañonazo')!" }
+        { label: "Architectural Marvel", value: "Basílica de la Sagrada Família in Barcelona designed by Antoni Gaudí" },
+        { label: "Nature Inspiration", value: "The inside looks like walking through a giant magical stone forest!" },
+        { label: "Rainbow Glass", value: "Giant stained glass windows cast dancing rainbows across the floor" }
       ]
     },
-
     famousPeople: [
       {
-        id: "celia_cruz",
-        name: "Celia Cruz",
-        role: "The 'Queen of Salsa' & Global Icon",
-        img: generateOutlineSvg("👑", "CELIA CRUZ • ¡AZÚCAR!", "Queen of Salsa in Ruffled Gown"),
+        id: "rafael_nadal",
+        name: "Rafael Nadal",
+        role: "Tennis Legend & 22-Time Grand Slam Champion",
+        img: generateOutlineSvg("🎾", "RAFAEL NADAL", "The King of Clay • 22 Grand Slams"),
         bullets: [
-          { label: "Born", value: "Havana, Cuba" },
-          { label: "Famous Shout", value: "'¡AZÚCAR!' (bringing joy and sweetness to everyone)" },
-          { label: "Legendary Career", value: "Recorded over 70 albums, won 3 Grammys and 4 Latin Grammys" },
-          { label: "Iconic Style", value: "Famous for her colorful rainbow wigs and dazzling stage costumes" }
+          { label: "Born", value: "Mallorca, Spain" },
+          { label: "Achievements", value: "22 Grand Slam tennis titles and 14 French Open crowns" },
+          { label: "Superpower", value: "Known for never giving up on a single point, no matter how hard!" }
         ],
-        kidTrivia: "She was famous for shouting '¡AZÚCAR!' which means sugar, because she believed music should make everyone happy!"
+        kidTrivia: "He started playing tennis when he was 3 years old and never threw his racket on the ground even once!"
       },
       {
-        id: "jose_marti",
-        name: "José Martí",
-        role: "Poet, National Hero & Children's Author",
-        img: generateOutlineSvg("📜", "JOSÉ MARTÍ", "Poet of Guantanamera"),
+        id: "salvador_dali",
+        name: "Salvador Dalí",
+        role: "Imaginative Surrealist Painter",
+        img: generateOutlineSvg("🎨", "SALVADOR DALÍ", "Melting Clocks & Upturned Moustache"),
         bullets: [
-          { label: "Born", value: "Havana, Cuba" },
-          { label: "Poetry", value: "Wrote the famous poem 'Versos Sencillos' used in the song 'Guantanamera'" },
-          { label: "Kids Magazine", value: "Created 'La Edad de Oro' (The Golden Age) magazine just for children" },
-          { label: "Hero", value: "Dedicated his entire life to freedom, education, and art" }
+          { label: "Born", value: "Figueres, Spain" },
+          { label: "Famous Painting", value: "'The Persistence of Memory' featuring soft melting clocks" },
+          { label: "Style", value: "Painted his wild dreams and had a famous pointy curly moustache!" }
         ],
-        kidTrivia: "He wrote poetry and stories especially for kids, teaching them that being kind and honest makes you a true hero!"
+        kidTrivia: "He had a pet ocelot leopard and loved making funny faces that made everyone laugh!"
       }
     ],
-
     card8: {
       title: "8. Language & Nature",
-      tag: "Bee Hummingbird",
-      img: generateOutlineSvg("🐦", "BEE HUMMINGBIRD", "Smallest Bird in the World"),
+      tag: "Iberian Lynx",
+      img: generateOutlineSvg("🐱", "IBERIAN LYNX", "Tufted Ears & Forest Cat"),
       bullets: [
-        { label: "Official Language", value: "Spanish" },
-        { label: "World Record Bird", value: "The Bee Hummingbird (Zunzuncito - only 2 inches long!)" },
-        { label: "Weight", value: "Weighs less than a single US penny!" },
-        { label: "Island Greeting", value: "¡Qué bola! (friendly Cuban slang for 'What's happening?!')" }
+        { label: "Language", value: "Spanish (Castellano), Catalan, Galician & Basque" },
+        { label: "Rare Animal", value: "Iberian Lynx (endangered wild cat with pointed tufted ears)" },
+        { label: "Cheer", value: "¡Olé! (celebrating bravery and beauty)" }
       ]
     },
-
     funFacts: [
       {
-        id: "smallest_bird",
-        title: "World's Smallest Bird",
-        subtitle: "Zunzuncito Hummingbird",
-        img: generateOutlineSvg("🪶", "TINIEST BIRD ON EARTH", "Weighs Less Than a Penny"),
-        caption: "Cuba is home to the Bee Hummingbird, the smallest bird species on planet Earth!",
-        kidExplanation: "It's smaller than your thumb and flutters its wings 80 times every single second!"
+        id: "cinderella_castle",
+        title: "Cinderella Castle",
+        subtitle: "Alcázar of Segovia",
+        img: generateOutlineSvg("🏰", "SEGOVIA CASTLE", "Disney's Fairytale Inspiration"),
+        caption: "The stone castle in Segovia, Spain helped inspire Walt Disney's Cinderella castle!",
+        kidExplanation: "It sits on a cliff like a real giant stone ship and looks just like a fairytale princess castle!"
       },
       {
-        id: "rolling_museum",
-        title: "Candy-Colored Cars",
-        subtitle: "Havana Street Cruisers",
-        img: generateOutlineSvg("🚗", "1950s VINTAGE CRUISERS", "Bubblegum Pink Convertibles"),
-        caption: "Havana has tens of thousands of real 1950s classic cars still driving every day!",
-        kidExplanation: "Riding down the street feels like stepping into a cartoon with bright pink and yellow classic convertibles!"
+        id: "tomato_battle",
+        title: "Giant Tomato Fight!",
+        subtitle: "La Tomatina Festival",
+        img: generateOutlineSvg("🍅", "LA TOMATINA", "World's Biggest Food Fight"),
+        caption: "Every August in Buñol, 20,000 people throw squishy ripe tomatoes in a giant friendly food fight!",
+        kidExplanation: "Trucks dump 100,000 pounds of squishy red tomatoes into the streets for the world's biggest food fight!"
       },
       {
-        id: "nightly_cannon",
-        title: "9:00 PM Cannon Boom!",
-        subtitle: "El Cañonazo de las Nueve",
-        img: generateOutlineSvg("💣", "EL CAÑONAZO DE LAS NUEVE", "Ceremonial Havana Harbor Cannon"),
-        caption: "Every single night at 9:00 PM, soldiers fire a real historic cannon over the harbor!",
-        kidExplanation: "It's a 300-year-old tradition that used to tell everyone it was time to close the city gates for bedtime!"
+        id: "human_towers",
+        title: "Human Castles",
+        subtitle: "Castells of Catalonia",
+        img: generateOutlineSvg("🤸", "CASTELLS OF CATALONIA", "Towers of Brave Kids"),
+        caption: "Towns build human towers up to 10 people high, with brave 6-year-old kids climbing to the very peak!",
+        kidExplanation: "Kids wear foam helmets and climb all the way to the top of giant human pyramids to wave to the crowd!"
+      }
+    ]
+  },
+
+  ar: {
+    id: "ar",
+    name: "Argentina",
+    adjective: "Argentine",
+    flagEmoji: "🇦🇷",
+    nickname: "Tierra del Fuego y Sol",
+    capital: "Buenos Aires",
+    region: "South America",
+    greeting: "¡Hola!",
+    cheer: "¡Vamos, vamos, Argentina!",
+    kidIntro: "A spectacular land of roaring waterfalls, soaring snowy Andes mountains, delicious empanadas, and World Cup soccer magic!",
+    card1: {
+      title: "1. Country Information",
+      tag: "Argentina",
+      img: generateOutlineSvg("🇦🇷", "ARGENTINA MAP & FLAG", "Sun of May • Buenos Aires"),
+      bullets: [
+        { label: "Country Name", value: "Argentina" },
+        { label: "Nickname", value: "Tierra del Sol y Plata" },
+        { label: "Capital City", value: "Buenos Aires ⭐" },
+        { label: "Continent", value: "South America" }
+      ]
+    },
+    card2: {
+      title: "2. Food & Treats",
+      tag: "Empanadas & Alfajores",
+      img: generateOutlineSvg("🥟", "EMPANADAS & DULCE DE LECHE", "Stuffed Pastries & Caramel Cookies"),
+      bullets: [
+        { label: "Snack Favorite", value: "Empanadas (golden baked pastry pockets stuffed with beef, corn, or cheese)" },
+        { label: "Sweet Wonder", value: "Alfajores (soft crumbly cookies filled with sweet caramel Dulce de Leche)" },
+        { label: "National Drink", value: "Mate (herbal tea shared among friends with a metal straw called a bombilla)" }
+      ]
+    },
+    card3: {
+      title: "3. Music & Dance",
+      tag: "Tango",
+      img: generateOutlineSvg("🎶", "ARGENTINE TANGO", "Bandoneón Accordion & Drama"),
+      bullets: [
+        { label: "Famous Dance", value: "Tango (dramatic, graceful dance born in the historic streets of Buenos Aires)" },
+        { label: "Soulful Sound", value: "Bandoneón (special accordion that gives Tango its emotional heartbeat)" },
+        { label: "Street Art", value: "Danced outdoors on the colorful cobblestone sidewalks of Caminito!" }
+      ]
+    },
+    card4: {
+      title: "4. Traditional Clothing",
+      tag: "Traje de Gaucho",
+      img: generateOutlineSvg("🐎", "GAUCHO COWBOY", "Wide Bombachas & Leather Belt"),
+      bullets: [
+        { label: "Pampas Cowboy", value: "Gaucho (brave Argentine horseman roaming the grassy plains)" },
+        { label: "Outfit", value: "Bombachas de campo (baggy trousers), leather belt decorated with silver coins & felt hat" },
+        { label: "Skill", value: "Master horse riders and caretakers of cattle" }
+      ]
+    },
+    card5: {
+      title: "5. Culture & Festival",
+      tag: "Soccer Passion",
+      img: generateOutlineSvg("⚽", "WORLD CUP CHAMPIONS", "Albアイスleste • 3 World Cups"),
+      bullets: [
+        { label: "National Passion", value: "Fútbol (Soccer is loved by every kid and family across the country!)" },
+        { label: "World Champions", value: "3-time FIFA World Cup winners (1978, 1986, and 2022)" },
+        { label: "Stadiums", value: "Fans sing, wave blue-and-white flags, and throw confetti for 90 minutes straight!" }
+      ]
+    },
+    card6: {
+      title: "6. Historic Landmarks",
+      tag: "Iguazú Falls",
+      img: generateOutlineSvg("🌊", "IGUAZÚ FALLS", "Garganta del Diablo Roar"),
+      bullets: [
+        { label: "Natural Wonder", value: "Iguazú Falls (over 275 giant waterfalls crashing together in the rainforest!)" },
+        { label: "Devil's Throat", value: "Garganta del Diablo shoots massive clouds of rainbow mist into the sky" },
+        { label: "Jungle Wildlife", value: "Surrounded by playful toucans, coatis, and shimmering butterflies" }
+      ]
+    },
+    famousPeople: [
+      {
+        id: "lionel_messi",
+        name: "Lionel Messi",
+        role: "World Cup Champion & 8-Time Ballon d'Or Winner",
+        img: generateOutlineSvg("⚽", "LIONEL MESSI #10", "World Cup Champion • GOAT"),
+        bullets: [
+          { label: "Born", value: "Rosario, Argentina" },
+          { label: "World Cup Hero", value: "Led Argentina to win the 2022 FIFA World Cup!" },
+          { label: "Superpower", value: "Dribbles the soccer ball as if it's glued to his left shoe!" },
+          { label: "Philanthropy", value: "His Leo Messi Foundation builds playgrounds and helps sick kids" }
+        ],
+        kidTrivia: "When he was a little boy, his grandmother walked him to every soccer practice, and he still points to the sky for her every goal!"
+      }
+    ],
+    card8: {
+      title: "8. Language & Nature",
+      tag: "Magellanic Penguins",
+      img: generateOutlineSvg("🐧", "PENGUINS OF PATAGONIA", "Punta Tombo Penguin Colony"),
+      bullets: [
+        { label: "Language", value: "Spanish (with friendly 'che' and musical Italian intonation)" },
+        { label: "Penguin Beach", value: "Punta Tombo is home to over 1 million friendly Magellanic penguins!" },
+        { label: "Cheer", value: "¡Vamos, vamos, Argentina!" }
+      ]
+    },
+    funFacts: [
+      {
+        id: "dinosaur_giants",
+        title: "Biggest Dinosaur Ever",
+        subtitle: "Patagotitan Mayorum",
+        img: generateOutlineSvg("🦕", "PATAGOTITAN DINOSAUR", "Bigger Than a Blue Whale"),
+        caption: "The largest dinosaur ever discovered on Earth was found in Patagonia, Argentina!",
+        kidExplanation: "It was as long as two school buses and weighed more than 10 African elephants!"
+      },
+      {
+        id: "penguin_beaches",
+        title: "Million Penguin Beach",
+        subtitle: "Punta Tombo, Patagonia",
+        img: generateOutlineSvg("🐧", "PATAGONIA PENGUINS", "Penguin Families on the Sand"),
+        caption: "Over one million penguins waddle on the beaches of southern Argentina every year!",
+        kidExplanation: "You can walk right along the beach path while mother penguins feed fluffy baby chicks!"
+      },
+      {
+        id: "iguazu_rainbows",
+        title: "Rainbow Waterfall",
+        subtitle: "Iguazú Falls",
+        img: generateOutlineSvg("🌈", "IGUAZÚ WATERFALL", "275 Crashing Waterfalls"),
+        caption: "Iguazú Falls has so much mist that bright double rainbows shine over the water almost every day!",
+        kidExplanation: "The roar of the waterfalls is so loud you can hear it miles away like roaring thunder!"
+      }
+    ]
+  },
+
+  pe: {
+    id: "pe",
+    name: "Peru",
+    adjective: "Peruvian",
+    flagEmoji: "🇵🇪",
+    nickname: "Tierra de los Incas",
+    capital: "Lima",
+    region: "South America (Pacific Coast & Andes)",
+    greeting: "¡Hola!",
+    cheer: "¡Arriba Perú!",
+    kidIntro: "An ancient wonderland of mountaintop Inca stone cities, fluffy friendly alpacas, and over 4,000 kinds of potatoes!",
+    card1: {
+      title: "1. Country Information",
+      tag: "Peru",
+      img: generateOutlineSvg("🇵🇪", "PERU MAP & VICUÑA", "Inca Heritage • Lima"),
+      bullets: [
+        { label: "Country Name", value: "Peru (República del Perú)" },
+        { label: "Nickname", value: "Tierra de los Incas" },
+        { label: "Capital City", value: "Lima ⭐ (gastronomy capital on the Pacific)" },
+        { label: "Continent", value: "South America" }
+      ]
+    },
+    card2: {
+      title: "2. Food & Treats",
+      tag: "Causa & Ceviche",
+      img: generateOutlineSvg("🥔", "CAUSA & 4,000 POTATOES", "Rainbow Potatoes & Causa Limeña"),
+      bullets: [
+        { label: "Potato Capital", value: "Peru grows over 4,000 colorful varieties of native potatoes (blue, red, yellow!)" },
+        { label: "Causa Limeña", value: "Layered chilled yellow potato cake filled with avocado and chicken" },
+        { label: "Sweet Treat", value: "Picarones (warm sweet potato and squash donuts drizzled with spiced syrup)" }
+      ]
+    },
+    card3: {
+      title: "3. Music & Dance",
+      tag: "Huayno & Panpipes",
+      img: generateOutlineSvg("🪈", "ZAMPOÑA PANPIPES", "Andean Flutes & Marinera Dance"),
+      bullets: [
+        { label: "Andean Melodies", value: "Zampoña (panpipes made of bamboo tubes) and Charango (small 10-string lute)" },
+        { label: "Coastal Dance", value: "Marinera (elegant courtship dance where dancers wave white handkerchiefs)" },
+        { label: "Highland Beats", value: "Huayno (lively mountain dance with stamping steps and colorful skirts)" }
+      ]
+    },
+    card4: {
+      title: "4. Traditional Clothing",
+      tag: "Poncho & Chullo",
+      img: generateOutlineSvg("🧶", "CHULLO HAT & PONCHO", "Warm Alpaca Wool with Ear Flaps"),
+      bullets: [
+        { label: "Warm Andean Hat", value: "Chullo (knitted wool hat with warm ear flaps worn in cold mountain winds)" },
+        { label: "Woven Poncho", value: "Handwoven from soft alpaca fleece dyed with natural berries and plants" },
+        { label: "Pollera", value: "Layered skirts embroidered with flowers and geometric Inca symbols" }
+      ]
+    },
+    card5: {
+      title: "5. Culture & Festival",
+      tag: "Inti Raymi",
+      img: generateOutlineSvg("☀️", "INTI RAYMI SUN FESTIVAL", "Inca Emperor at Sacsayhuamán"),
+      bullets: [
+        { label: "Festival of the Sun", value: "Inti Raymi (celebrates the Inca New Year and the winter solstice)" },
+        { label: "Golden Procession", value: "Actors dress as Inca royalty with golden crowns and feathered scepters" },
+        { label: "Sacsayhuamán", value: "Held at a fortress made of giant stones that fit together without cement!" }
+      ]
+    },
+    card6: {
+      title: "6. Historic Landmarks",
+      tag: "Machu Picchu",
+      img: generateOutlineSvg("⛰️", "MACHU PICCHU", "Lost City of the Incas in Clouds"),
+      bullets: [
+        { label: "Lost City", value: "Machu Picchu (perched 7,970 feet high among emerald Andes cloud forests)" },
+        { label: "Inca Engineering", value: "Granite stones cut so precisely that you cannot slide a piece of paper between them!" },
+        { label: "Wonder of World", value: "One of the New Seven Wonders of the World" }
+      ]
+    },
+    famousPeople: [
+      {
+        id: "gaston_acurio",
+        name: "Chef Gastón Acurio",
+        role: "World-Famous Chef & Cultural Ambassador",
+        img: generateOutlineSvg("👨‍🍳", "CHEF GASTÓN ACURIO", "Global Ambassador of Peruvian Food"),
+        bullets: [
+          { label: "Mission", value: "Shared Peru's delicious cuisine and biodiversity with restaurants across the globe" },
+          { label: "School for Kids", value: "Opened a free culinary institute in Pachacútec for young students" }
+        ],
+        kidTrivia: "He showed the world that cooking with local ingredients from small farmers can change children's lives!"
+      }
+    ],
+    card8: {
+      title: "8. Language & Nature",
+      tag: "Llama & Alpaca",
+      img: generateOutlineSvg("🦙", "FRIENDLY ALPACAS", "Fluffy Fleece & Andes Mountains"),
+      bullets: [
+        { label: "Languages", value: "Spanish, Quechua (Inca language), and Aymara" },
+        { label: "Fluffy Mascots", value: "Llamas, Alpacas, and wild Vicuñas with the softest wool in the world" },
+        { label: "Greeting", value: "¡Allianllachu! (Quechua for 'How are you?')" }
+      ]
+    },
+    funFacts: [
+      {
+        id: "rainbow_mountain",
+        title: "Rainbow Mountain",
+        subtitle: "Vinicunca, Cusco",
+        img: generateOutlineSvg("🌈", "VINICUNCA RAINBOW", "Natural Striped Mineral Mountain"),
+        caption: "Vinicunca is a mountain with natural mineral stripes of turquoise, gold, lavender, and pink!",
+        kidExplanation: "It looks like a giant scoop of rainbow sherbet ice cream painted across the mountains!"
+      },
+      {
+        id: "floating_reed_islands",
+        title: "Floating Grass Islands",
+        subtitle: "Lake Titicaca",
+        img: generateOutlineSvg("🛶", "FLOATING UROS ISLANDS", "Totora Reed Villages on Water"),
+        caption: "The Uros people live on islands made completely of buoyant totora reeds floating on Lake Titicaca!",
+        kidExplanation: "When the floor gets soft, they simply layer fresh yellow reeds right on top of their island!"
+      },
+      {
+        id: "thousands_of_potatoes",
+        title: "4,000 Potato Varieties",
+        subtitle: "Native Andes Harvest",
+        img: generateOutlineSvg("🥔", "NATIVE POTATOES", "Purple, Yellow & Red Spuds"),
+        caption: "Peru gave the potato to the world, and farmers still harvest over 4,000 different shapes and colors!",
+        kidExplanation: "Potatoes in Peru can be bright purple, yellow, red, and even shaped like spirals!"
+      }
+    ]
+  },
+
+  cr: {
+    id: "cr",
+    name: "Costa Rica",
+    adjective: "Costa Rican",
+    flagEmoji: "🇨🇷",
+    nickname: "Tierra de Pura Vida",
+    capital: "San José",
+    region: "Central America",
+    greeting: "¡Hola!",
+    cheer: "¡Pura Vida!",
+    kidIntro: "A lush, green wonderland of misty cloud forests, bubbling active volcanoes, surfing beaches, and smiling sloths!",
+    card1: {
+      title: "1. Country Information",
+      tag: "Costa Rica",
+      img: generateOutlineSvg("🇨🇷", "COSTA RICA MAP", "Rich Coast • San José"),
+      bullets: [
+        { label: "Country Name", value: "Costa Rica" },
+        { label: "Nickname", value: "Tierra de Pura Vida" },
+        { label: "Capital City", value: "San José ⭐" },
+        { label: "Region", value: "Central America" }
+      ]
+    },
+    card2: {
+      title: "2. Food & Treats",
+      tag: "Gallo Pinto",
+      img: generateOutlineSvg("🍚", "GALLO PINTO", "Spotted Rooster Rice & Beans"),
+      bullets: [
+        { label: "Breakfast King", value: "Gallo Pinto ('Spotted Rooster' - rice and black beans with Lizano sweet sauce)" },
+        { label: "Casado Lunch", value: "Platter of rice, beans, plantains, salad, and fresh tropical fruit" },
+        { label: "Sweet Treat", value: "Chorreadas (sweet sweet-corn pancakes served with sour cream)" }
+      ]
+    },
+    card3: {
+      title: "3. Music & Dance",
+      tag: "Punto Guanacasteco",
+      img: generateOutlineSvg("🎶", "MARIMBA & PUNTO", "Wooden Marimba Keys & Shouts"),
+      bullets: [
+        { label: "National Dance", value: "El Punto Guanacasteco (energetic couple dance with handkerchiefs and cheering)" },
+        { label: "Joyful Cry", value: "'¡Bomba!' shouted before a funny rhyming joke is told to the crowd!" }
+      ]
+    },
+    card4: {
+      title: "4. Traditional Clothing",
+      tag: "Traje Típico",
+      img: generateOutlineSvg("👗", "COSTA RICAN RUFFLES", "Swirling Rainbow Skirts"),
+      bullets: [
+        { label: "Traditional Colors", value: "Dresses decorated with bright red, blue, and yellow ribbon bands" },
+        { label: "Oxcart Painters", value: "Famous for beautifully painted wooden carts ('Carretas') with star patterns" }
+      ]
+    },
+    card5: {
+      title: "5. Culture & Festival",
+      tag: "Carretas Típicas",
+      img: generateOutlineSvg("🛞", "PAINTED OXCART WHEEL", "Mandala Patterns of Sarchí"),
+      bullets: [
+        { label: "Painted Oxcart", value: "Carreta Típica (UNESCO Masterpiece painted in vivid geometric flowers)" },
+        { label: "National Symbol", value: "Celebrates peaceful farmers transporting coffee down mountain trails" }
+      ]
+    },
+    card6: {
+      title: "6. Historic Landmarks",
+      tag: "Arenal Volcano",
+      img: generateOutlineSvg("🌋", "ARENAL VOLCANO", "Conical Volcano & Hot Springs"),
+      bullets: [
+        { label: "Volcano Giant", value: "Arenal Volcano (a perfectly shaped conical volcano rising over rainforests)" },
+        { label: "Natural Spa", value: "Heats natural volcanic mineral hot springs where families swim under the stars" }
+      ]
+    },
+    famousPeople: [
+      {
+        id: "franklin_chang_diaz",
+        name: "Dr. Franklin Chang-Díaz",
+        role: "NASA Astronaut & Plasma Physicist",
+        img: generateOutlineSvg("🚀", "DR. CHANG-DÍAZ", "7 Space Shuttle Missions"),
+        bullets: [
+          { label: "Record Holder", value: "Tied the all-time world record with 7 space shuttle flights for NASA!" },
+          { label: "Space Rocket", value: "Invented the VASIMR plasma rocket to fly humans to Mars faster" }
+        ],
+        kidTrivia: "He moved to the US as a teenager without speaking English and grew up to become a record-setting astronaut!"
+      }
+    ],
+    card8: {
+      title: "8. Language & Nature",
+      tag: "Sloths & Pura Vida",
+      img: generateOutlineSvg("🦥", "THREE-TOED SLOTH", "Smiling Sloths & Tree Canopies"),
+      bullets: [
+        { label: "National Motto", value: "¡Pura Vida! (Pure Life! Used for hello, goodbye, and everything is great!)" },
+        { label: "Peace Symbol", value: "Costa Rica has NO standing army since 1948—money goes to schools and nature!" }
+      ]
+    },
+    funFacts: [
+      {
+        id: "smiling_sloths",
+        title: "Tree Hugging Sloths",
+        subtitle: "Cloud Forest Friends",
+        img: generateOutlineSvg("🦥", "SLOTH CLIMBER", "Slow-Moving Tree Friends"),
+        caption: "Costa Rica is home to adorable two-toed and three-toed sloths hanging upside-down in trees!",
+        kidExplanation: "Sloths move so slowly that tiny green plants actually grow on their fur like camouflage!"
+      },
+      {
+        id: "peaceful_country",
+        title: "No Army Since 1948",
+        subtitle: "Schools Over Soldiers",
+        img: generateOutlineSvg("🕊️", "PEACE & NATURE", "Butterflies Over Soldiers"),
+        caption: "Costa Rica dissolved its military in 1948 and invests its budget in national parks and public schools!",
+        kidExplanation: "Instead of soldiers, they have park rangers who protect monkeys, toucans, and sea turtles!"
+      },
+      {
+        id: "sea_turtle_nesting",
+        title: "Turtle Arrival Parade",
+        subtitle: "Ostional Wildlife Refuge",
+        img: generateOutlineSvg("🐢", "SEA TURTLE ARRIBADA", "Thousands of Baby Turtles"),
+        caption: "Hundreds of thousands of Olive Ridley sea turtles crawl onto the sand at once in an 'Arribada'!",
+        kidExplanation: "Thousands of mama turtles crawl out of the waves together under the moonlight to lay their eggs!"
       }
     ]
   }
@@ -875,20 +1165,81 @@ let STATE = {
   event: "Hispanic Heritage Month",
   countryKey: "pr",
   selectedHeroIndex: 0,
-  selectedFactIndices: [0, 1, 2], // 3 chosen facts
-  currentStep: 1,
-  totalSteps: 5,
-  customUploads: {} // key -> dataUrl
+  selectedFactIndices: [0, 1, 2],
+  avatar: "🦁"
 };
 
-// Initialize Application
+// Interactive "Find My Country" Quiz Questions
+const QUIZ_QUESTIONS = [
+  {
+    q: "1. Where do you want your adventure to take place?",
+    sub: "Choose your favorite kind of landscape to explore!",
+    options: [
+      { text: "A tropical island with turquoise beaches & glowing water 🏝️", match: "pr" },
+      { text: "Ancient stone pyramids, cacti & desert sun 🏛️", match: "mx" },
+      { text: "Sunny palm tree beaches with dancing music 🇩🇴", match: "dr" },
+      { text: "Misty mountains with tallest palm trees & butterflies 🌿", match: "co" },
+      { text: "Fairytale stone castles & flamenco dancers 🏰", match: "es" },
+      { text: "Snowy Andes mountains, waterfalls & penguin beaches 🏔️", match: "ar" },
+      { text: "Mountaintop Inca ruins & rainbow mountains ⛰️", match: "pe" },
+      { text: "Cloud forests with volcanoes & smiling sloths 🦥", match: "cr" }
+    ]
+  },
+  {
+    q: "2. What sounds like the yummiest lunch?",
+    sub: "Which food would make your tummy happiest?",
+    options: [
+      { text: "Savory plantains mashed with garlic & tropical fruit shaved ice 🍧", match: "pr" },
+      { text: "Warm corn tacos with guacamole & cinnamon churros 🌮", match: "mx" },
+      { text: "Creamy mangú with fried cheese & orange dream smoothie 🍳", match: "dr" },
+      { text: "Cheesy golden corn arepas & passion fruit smoothies 🧀", match: "co" },
+      { text: "Golden paella with saffron rice & churros con chocolate 🥘", match: "es" },
+      { text: "Crunchy baked empanadas & sweet caramel dulce de leche 🥟", match: "ar" },
+      { text: "Layered yellow potato causa & sweet picarones donuts 🥔", match: "pe" },
+      { text: "Gallo pinto rice & beans with sweet corn pancakes 🍚", match: "cr" }
+    ]
+  },
+  {
+    q: "3. Which friendly animal would you love to meet?",
+    sub: "Every country has a special creature mascot!",
+    options: [
+      { text: "A tiny singing tree frog that chirps '¡Ko-Kee!' at sunset 🐸", match: "pr" },
+      { text: "A smiling underwater salamander with pink feathery gills 🦎", match: "mx" },
+      { text: "A gentle mother humpback whale splashing with her baby calf 🐋", match: "dr" },
+      { text: "A giant condor bird soaring with 10-foot wings 🦅", match: "co" },
+      { text: "A rare wild lynx cat with tufted ears 🐱", match: "es" },
+      { text: "Fluffy penguins waddling along the beach 🐧", match: "ar" },
+      { text: "A soft, fluffy alpaca smiling high in the mountains 🦙", match: "pe" },
+      { text: "A smiling sloth hanging upside-down in a tree 🦥", match: "cr" }
+    ]
+  },
+  {
+    q: "4. What kind of superstar hero inspires you the most?",
+    sub: "Pick the person you'd love to learn from!",
+    options: [
+      { text: "A music star who gets whole stadiums dancing in traditional straw hats 🎤", match: "pr" },
+      { text: "A brave artist who painted colorful animals and self-portraits 🎨", match: "mx" },
+      { text: "A baseball hall-of-famer who saves kids' lives with his foundation ⚾", match: "dr" },
+      { text: "A global pop superstar who builds schools for children 🏫", match: "co" },
+      { text: "A sports legend who never gives up on a single point 🎾", match: "es" },
+      { text: "A World Cup soccer champion who dribbles with magic in his boots ⚽", match: "ar" },
+      { text: "A world-renowned chef who opens cooking schools for students 👨‍🍳", match: "pe" },
+      { text: "An astronaut who flew to space 7 times and builds Mars rockets 🚀", match: "cr" }
+    ]
+  }
+];
+
+let quizAnswers = [];
+let quizStep = 0;
+
+// Initialize on Load
 document.addEventListener("DOMContentLoaded", () => {
   initCountrySelector();
   initFormBindings();
   renderApp();
 });
 
-// Setup country selector cards
+// Setup country selector pills
 function initCountrySelector() {
   const container = document.getElementById("country-pills");
   if (!container) return;
@@ -914,7 +1265,6 @@ function selectCountry(countryId) {
   STATE.selectedFactIndices = [0, 1, 2];
   initCountrySelector();
   renderApp();
-  speakSoundFeedback();
 }
 
 function initFormBindings() {
@@ -956,7 +1306,7 @@ function initFormBindings() {
   }
 }
 
-// Master Render Function
+// Master Render
 function renderApp() {
   const country = COUNTRY_DATA[STATE.countryKey];
   if (!country) return;
@@ -968,7 +1318,7 @@ function renderApp() {
   updateLivePreviews();
 }
 
-// Render the Famous Person Multiple-Choice Selector
+// Famous Person Selector
 function renderHeroSelector(country) {
   const container = document.getElementById("hero-picker-container");
   if (!container) return;
@@ -977,7 +1327,7 @@ function renderHeroSelector(country) {
   country.famousPeople.forEach((hero, index) => {
     const isSelected = STATE.selectedHeroIndex === index;
     const card = document.createElement("div");
-    card.className = `p-3.5 rounded-xl border-2 cursor-pointer transition flex gap-3 items-center ${
+    card.className = `p-3 rounded-xl border-2 cursor-pointer transition flex gap-3 items-center ${
       isSelected
         ? "border-blue-600 bg-blue-50/80 shadow-md ring-2 ring-blue-400"
         : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
@@ -986,24 +1336,23 @@ function renderHeroSelector(country) {
       STATE.selectedHeroIndex = index;
       renderHeroSelector(country);
       updateLivePreviews();
-      speakSoundFeedback();
     };
 
     const imgBox = document.createElement("div");
-    imgBox.className = "w-16 h-16 rounded-lg bg-white border border-slate-300 flex-shrink-0 overflow-hidden flex items-center justify-center p-1";
+    imgBox.className = "w-14 h-14 rounded-lg bg-white border border-slate-300 flex-shrink-0 overflow-hidden flex items-center justify-center p-0.5";
     imgBox.innerHTML = `<img src="${hero.img}" class="w-full h-full object-contain" alt="${hero.name}">`;
 
     const info = document.createElement("div");
     info.className = "flex-1";
     info.innerHTML = `
       <div class="flex items-center justify-between">
-        <h4 class="font-extrabold text-sm text-slate-900">${hero.name}</h4>
-        <span class="text-xs px-2 py-0.5 rounded-full font-bold ${isSelected ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-600'}">
+        <h4 class="font-extrabold text-xs md:text-sm text-slate-900">${hero.name}</h4>
+        <span class="text-[11px] px-2 py-0.5 rounded-full font-bold ${isSelected ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-600'}">
           ${isSelected ? 'Selected ⭐' : 'Choose'}
         </span>
       </div>
       <p class="text-xs font-semibold text-blue-800">${hero.role}</p>
-      <p class="text-[11px] text-slate-600 mt-1 italic leading-tight">"${hero.kidTrivia}"</p>
+      <p class="text-[11px] text-slate-600 mt-0.5 italic leading-tight">"${hero.kidTrivia}"</p>
     `;
 
     card.appendChild(imgBox);
@@ -1012,7 +1361,7 @@ function renderHeroSelector(country) {
   });
 }
 
-// Render the 3-out-of-N Fun Facts Selector
+// Fun Facts Picker
 function renderFunFactsPicker(country) {
   const container = document.getElementById("facts-picker-container");
   const countLabel = document.getElementById("facts-count-badge");
@@ -1029,7 +1378,7 @@ function renderFunFactsPicker(country) {
   country.funFacts.forEach((fact, index) => {
     const isChecked = STATE.selectedFactIndices.includes(index);
     const card = document.createElement("div");
-    card.className = `p-3 rounded-xl border-2 cursor-pointer transition flex items-center gap-3 ${
+    card.className = `p-2.5 rounded-xl border-2 cursor-pointer transition flex items-center gap-3 ${
       isChecked
         ? "border-amber-500 bg-amber-50/70 shadow-sm"
         : "border-slate-200 bg-white hover:border-slate-300"
@@ -1047,7 +1396,7 @@ function renderFunFactsPicker(country) {
     checkbox.className = "w-4 h-4 rounded text-amber-600 focus:ring-amber-500 cursor-pointer pointer-events-none";
 
     const imgThumb = document.createElement("div");
-    imgThumb.className = "w-12 h-12 bg-white rounded border border-slate-300 overflow-hidden flex-shrink-0 flex items-center justify-center p-0.5";
+    imgThumb.className = "w-10 h-10 bg-white rounded border border-slate-300 overflow-hidden flex-shrink-0 flex items-center justify-center p-0.5";
     imgThumb.innerHTML = `<img src="${fact.img}" class="w-full h-full object-contain" alt="${fact.title}">`;
 
     const desc = document.createElement("div");
@@ -1071,14 +1420,11 @@ function toggleFactIndex(index) {
   const current = [...STATE.selectedFactIndices];
   const pos = current.indexOf(index);
   if (pos >= 0) {
-    if (current.length > 1) { // keep at least 1
-      current.splice(pos, 1);
-    }
+    if (current.length > 1) current.splice(pos, 1);
   } else {
     if (current.length < 3) {
       current.push(index);
     } else {
-      // replace first
       current.shift();
       current.push(index);
     }
@@ -1086,24 +1432,24 @@ function toggleFactIndex(index) {
   STATE.selectedFactIndices = current;
 }
 
-// Render "Kid Learning Challenge" - Interactive prompts for the child & parent
+// Kid Learning Challenge
 function renderKidLearningChallenge(country) {
   const container = document.getElementById("kid-learning-box");
   if (!container) return;
 
-  const hero = country.famousPeople[STATE.selectedHeroIndex];
+  const hero = country.famousPeople[STATE.selectedHeroIndex] || country.famousPeople[0];
   container.innerHTML = `
     <div class="bg-gradient-to-r from-sky-50 to-indigo-50 border-2 border-sky-300 rounded-2xl p-4 shadow-sm">
       <div class="flex items-center gap-2 mb-2">
         <span class="text-2xl">🎓</span>
-        <h3 class="font-black text-sky-950 text-sm uppercase tracking-wider">Izzy's Kid Explorer Challenge: ${country.name}</h3>
+        <h3 class="font-black text-sky-950 text-sm uppercase tracking-wider">${STATE.studentName}'s Explorer Challenge: ${country.name}</h3>
       </div>
       <p class="text-xs text-slate-700 leading-relaxed mb-3">
         Here are 3 fun questions for <strong>${STATE.studentName}</strong> to discover with family or classmates:
       </p>
       <div class="space-y-2">
         <div class="bg-white p-2.5 rounded-xl border border-sky-200 text-xs">
-          <p class="font-bold text-sky-900">1. Can you say the cheer out loud?</p>
+          <p class="font-bold text-sky-900">1. Can you shout the cheer out loud?</p>
           <p class="text-slate-600 mt-0.5">In ${country.name}, people shout <strong>"${country.cheer}"</strong> when they celebrate! Let's practice saying it together!</p>
         </div>
         <div class="bg-white p-2.5 rounded-xl border border-sky-200 text-xs">
@@ -1119,12 +1465,12 @@ function renderKidLearningChallenge(country) {
   `;
 }
 
-// Render "Practice My Presentation" Script with Speech Synthesis
+// Presentation Script with Speech Synthesis
 function renderPresentationScript(country) {
   const container = document.getElementById("presentation-script-box");
   if (!container) return;
 
-  const hero = country.famousPeople[STATE.selectedHeroIndex];
+  const hero = country.famousPeople[STATE.selectedHeroIndex] || country.famousPeople[0];
   const chosenFacts = STATE.selectedFactIndices.map(i => country.funFacts[i] || country.funFacts[0]);
 
   const scriptLines = [
@@ -1165,7 +1511,6 @@ function renderPresentationScript(country) {
   }
 }
 
-// Text-to-speech helper
 function speakText(text) {
   if (!("speechSynthesis" in window)) {
     alert("Speech synthesis is not supported in this browser.");
@@ -1173,29 +1518,20 @@ function speakText(text) {
   }
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.rate = 0.9; // clear, gentle speed for kids
+  utterance.rate = 0.9;
   utterance.pitch = 1.05;
   window.speechSynthesis.speak(utterance);
 }
 
-function speakSoundFeedback() {
-  // gentle audio affirmation if supported
-  if ("speechSynthesis" in window && false) {
-    const cheer = new SpeechSynthesisUtterance("¡Excelente!");
-    cheer.lang = "es-ES";
-    window.speechSynthesis.speak(cheer);
-  }
-}
-
-// Update all live previews (Mockup board and 5 Printable Sheets)
+// Live DOM Updates
 function updateLivePreviews() {
   const country = COUNTRY_DATA[STATE.countryKey];
   if (!country) return;
 
-  const hero = country.famousPeople[STATE.selectedHeroIndex];
+  const hero = country.famousPeople[STATE.selectedHeroIndex] || country.famousPeople[0];
   const chosenFacts = STATE.selectedFactIndices.map(i => country.funFacts[i] || country.funFacts[0]);
 
-  // 1. Update Mockup Banner
+  // Mockup Banner
   const mockupBannerName = document.getElementById("mockup-banner-name");
   const mockupBannerTitle = document.getElementById("mockup-banner-title");
   const mockupBannerSubtitle = document.getElementById("mockup-banner-subtitle");
@@ -1206,7 +1542,7 @@ function updateLivePreviews() {
   if (mockupBannerSubtitle) mockupBannerSubtitle.textContent = `Featuring: Food, Music, History, ${hero.name} & The ${country.card8.tag}! ${country.flagEmoji}`;
   if (mockupSchoolHeader) mockupSchoolHeader.textContent = `${STATE.schoolName.toUpperCase()} • ${STATE.event.toUpperCase()} • ${STATE.grade.toUpperCase()}`;
 
-  // 2. Update Sheet 1 SVG (Rotated 90° for Max 9.8" x 4.8" Size)
+  // Sheet 1 SVG (Rotated 90° for Max 9.8" x 4.8" Size)
   const svgLine1 = document.getElementById("svg-banner-line1");
   const svgLine2 = document.getElementById("svg-banner-line2");
   const svgHeader = document.getElementById("svg-banner-header");
@@ -1221,14 +1557,14 @@ function updateLivePreviews() {
   if (svgSub2) svgSub2.textContent = `⭐ Food • Music • History • ${hero.name} ⭐`;
   if (svgSub3) svgSub3.textContent = `🌺 ${country.nickname}`;
 
-  // 3. Update Category Cards (Cards 1 to 9) in both Mockup & Printable Sheets
+  // Cards 1-6
   updateCardDOM("card-1", country.card1);
   updateCardDOM("card-2", country.card2);
   updateCardDOM("card-3", country.card3);
   updateCardDOM("card-4", country.card4);
   updateCardDOM("card-5", country.card5);
   updateCardDOM("card-6", country.card6);
-  
+
   // Card 7: Famous Person
   const card7Data = {
     title: "7. Famous Person",
@@ -1238,22 +1574,24 @@ function updateLivePreviews() {
   };
   updateCardDOM("card-7", card7Data);
 
-  // Card 8: Language & Mascot
+  // Card 8: Language & Nature
   updateCardDOM("card-8", country.card8);
 
   // Card 9: 3 Chosen Fun Facts
   updateCard9DOM(chosenFacts, country);
 
-  // Update Footer Credit
+  // Sheet 6 Presentation Cue Cards
+  updateCueCardsDOM(hero, country, chosenFacts);
+
+  // Footer Credits
   const footerBadges = document.querySelectorAll(".student-footer-credit");
   footerBadges.forEach(el => {
     el.textContent = `⭐ ${STATE.studentName} • ${STATE.schoolName} • Ready to Share My Culture! ❤️`;
   });
 }
 
-// Update single card DOM in both mockup and sheet
 function updateCardDOM(cardId, data) {
-  // Update Printable Sheet Card
+  // Sheet Card
   const sheetCard = document.getElementById(`sheet-${cardId}`);
   if (sheetCard) {
     const titleEl = sheetCard.querySelector(".card-title");
@@ -1274,7 +1612,7 @@ function updateCardDOM(cardId, data) {
     }
   }
 
-  // Update Mockup Mini-Card
+  // Mockup Mini-Card
   const mockCard = document.getElementById(`mock-${cardId}`);
   if (mockCard) {
     const titleEl = mockCard.querySelector(".mock-title");
@@ -1296,9 +1634,7 @@ function updateCardDOM(cardId, data) {
   }
 }
 
-// Special handler for Card 9 (3 Fun Facts)
 function updateCard9DOM(chosenFacts, country) {
-  // Printable Sheet 5 (Card 9)
   const sheetCard9 = document.getElementById("sheet-card-9");
   if (sheetCard9) {
     const tagEl = sheetCard9.querySelector(".card-tag");
@@ -1332,7 +1668,6 @@ function updateCard9DOM(chosenFacts, country) {
     }
   }
 
-  // Mockup Card 9
   const mockCard9 = document.getElementById("mock-card-9");
   if (mockCard9 && chosenFacts.length >= 3) {
     const mockGrid = mockCard9.querySelector(".mock-facts-grid");
@@ -1359,103 +1694,115 @@ function updateCard9DOM(chosenFacts, country) {
   }
 }
 
-// Convert Uploaded Photo to Crisp B&W Coloring Line Art using HTML5 Canvas Edge Detection
-function convertImageToColoringArt(imageElement, threshold = 40) {
-  const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("2d");
-  canvas.width = 600;
-  canvas.height = 450;
+function updateCueCardsDOM(hero, country, chosenFacts) {
+  const cardAIntro = document.getElementById("cue-card-a-text");
+  const cardBText = document.getElementById("cue-card-b-text");
 
-  // Draw image scaled to fit
-  ctx.fillStyle = "#ffffff";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(imageElement, 0, 0, canvas.width, canvas.height);
-
-  const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  const data = imgData.data;
-  const width = canvas.width;
-  const height = canvas.height;
-
-  // Convert to grayscale
-  const gray = new Float32Array(width * height);
-  for (let i = 0; i < data.length; i += 4) {
-    gray[i / 4] = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+  if (cardAIntro) {
+    cardAIntro.innerHTML = `"¡Hola! My name is <strong>${STATE.studentName}</strong> and I am in ${STATE.grade} at ${STATE.schoolName}! Today I am presenting <strong>${country.name}</strong> (${country.nickname})!"`;
   }
-
-  // Sobel edge operator
-  const edges = new Uint8ClampedArray(width * height);
-  for (let y = 1; y < height - 1; y++) {
-    for (let x = 1; x < width - 1; x++) {
-      const idx = y * width + x;
-      const gx =
-        -1 * gray[(y - 1) * width + (x - 1)] +
-         1 * gray[(y - 1) * width + (x + 1)] +
-        -2 * gray[y * width + (x - 1)] +
-         2 * gray[y * width + (x + 1)] +
-        -1 * gray[(y + 1) * width + (x - 1)] +
-         1 * gray[(y + 1) * width + (x + 1)];
-
-      const gy =
-        -1 * gray[(y - 1) * width + (x - 1)] +
-        -2 * gray[(y - 1) * width + x] +
-        -1 * gray[(y - 1) * width + (x + 1)] +
-         1 * gray[(y + 1) * width + (x - 1)] +
-         2 * gray[(y + 1) * width + x] +
-         1 * gray[(y + 1) * width + (x + 1)];
-
-      const mag = Math.sqrt(gx * gx + gy * gy);
-      // Invert: dark edge becomes black line (0), flat areas become pure white (255)
-      edges[idx] = mag > threshold ? 0 : 255;
-    }
+  if (cardBText) {
+    cardBText.innerHTML = `"My favorite hero is <strong>${hero.name}</strong>, and my favorite food is <strong>${country.card2.tag}</strong>! Did you know: <em>${chosenFacts[0].kidExplanation}</em>"`;
   }
-
-  // Put edges back onto canvas
-  for (let i = 0; i < edges.length; i++) {
-    const val = edges[i];
-    const pixelIdx = i * 4;
-    data[pixelIdx] = val;
-    data[pixelIdx + 1] = val;
-    data[pixelIdx + 2] = val;
-    data[pixelIdx + 3] = 255;
-  }
-
-  ctx.putImageData(imgData, 0, 0);
-  return canvas.toDataURL("image/png");
 }
 
-// Project Export / Import
-function exportProjectJSON() {
-  const jsonStr = JSON.stringify(STATE, null, 2);
-  const blob = new Blob([jsonStr], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `${STATE.studentName.toLowerCase()}_${STATE.countryKey}_poster_project.json`;
-  a.click();
-  URL.revokeObjectURL(url);
+// -----------------------------
+// INTERACTIVE "WHICH COUNTRY SHOULD I DO?" QUIZ
+// -----------------------------
+
+function openQuizModal() {
+  quizStep = 0;
+  quizAnswers = [];
+  const modal = document.getElementById("country-quiz-modal");
+  if (modal) {
+    modal.classList.remove("hidden");
+    renderQuizStep();
+  }
 }
 
-function importProjectJSON(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    try {
-      const importedState = JSON.parse(e.target.result);
-      STATE = { ...STATE, ...importedState };
-      initFormBindings();
-      initCountrySelector();
-      renderApp();
-      alert("Project loaded successfully! ⭐");
-    } catch (err) {
-      alert("Error reading project file.");
-    }
-  };
-  reader.readAsText(file);
+function closeQuizModal() {
+  const modal = document.getElementById("country-quiz-modal");
+  if (modal) modal.classList.add("hidden");
 }
 
-// Global functions exposed to window
+function renderQuizStep() {
+  const modalContent = document.getElementById("quiz-step-content");
+  if (!modalContent) return;
+
+  if (quizStep < QUIZ_QUESTIONS.length) {
+    const q = QUIZ_QUESTIONS[quizStep];
+    modalContent.innerHTML = `
+      <div class="space-y-4">
+        <div class="flex justify-between items-center text-xs font-bold text-blue-600 uppercase tracking-widest border-b pb-2">
+          <span>Question ${quizStep + 1} of ${QUIZ_QUESTIONS.length}</span>
+          <span>Explorer Quiz 🧭</span>
+        </div>
+        <div>
+          <h3 class="text-base md:text-lg font-black text-slate-900">${q.q}</h3>
+          <p class="text-xs text-slate-500">${q.sub}</p>
+        </div>
+        <div class="space-y-2 max-h-80 overflow-y-auto pr-1">
+          ${q.options.map((opt, i) => `
+            <button onclick="handleQuizAnswer('${opt.match}')" class="w-full text-left p-3 rounded-xl border-2 border-slate-200 hover:border-blue-500 hover:bg-blue-50 text-xs md:text-sm font-semibold transition flex items-center justify-between group">
+              <span>${opt.text}</span>
+              <span class="text-slate-400 group-hover:text-blue-600 font-bold">➔</span>
+            </button>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  } else {
+    // Calculate Winner Match
+    const tally = {};
+    quizAnswers.forEach(id => { tally[id] = (tally[id] || 0) + 1; });
+    let bestMatch = "pr";
+    let maxVotes = 0;
+    Object.keys(tally).forEach(id => {
+      if (tally[id] > maxVotes) {
+        maxVotes = tally[id];
+        bestMatch = id;
+      }
+    });
+
+    const matchCountry = COUNTRY_DATA[bestMatch] || COUNTRY_DATA.pr;
+
+    modalContent.innerHTML = `
+      <div class="text-center space-y-4 py-3">
+        <span class="text-5xl animate-bounce inline-block">🎉</span>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">Great Job Explorer!</span>
+          <h3 class="text-2xl font-black text-slate-900">Your Perfect Match: ${matchCountry.name} ${matchCountry.flagEmoji}</h3>
+          <p class="text-xs text-slate-600 max-w-md mx-auto mt-1">${matchCountry.kidIntro}</p>
+        </div>
+        <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs text-amber-900">
+          ⭐ Cheer to practice: <strong>"${matchCountry.cheer}"</strong> • Famous Food: <strong>${matchCountry.card2.tag}</strong>
+        </div>
+        <button onclick="applyQuizMatch('${matchCountry.id}')" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-black text-sm rounded-xl shadow-lg transition">
+          🚀 Start My ${matchCountry.name} Adventure!
+        </button>
+      </div>
+    `;
+  }
+}
+
+function handleQuizAnswer(matchId) {
+  quizAnswers.push(matchId);
+  quizStep++;
+  renderQuizStep();
+}
+
+function applyQuizMatch(countryId) {
+  selectCountry(countryId);
+  closeQuizModal();
+  // Scroll to studio
+  const studio = document.getElementById("builder-studio");
+  if (studio) studio.scrollIntoView({ behavior: "smooth" });
+}
+
+// Global functions
 window.selectCountry = selectCountry;
-window.exportProjectJSON = exportProjectJSON;
-window.importProjectJSON = importProjectJSON;
+window.openQuizModal = openQuizModal;
+window.closeQuizModal = closeQuizModal;
+window.handleQuizAnswer = handleQuizAnswer;
+window.applyQuizMatch = applyQuizMatch;
 window.speakText = speakText;
