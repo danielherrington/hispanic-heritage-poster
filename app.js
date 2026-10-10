@@ -36,7 +36,7 @@ const COUNTRY_DATA = {
     card1: {
       title: "1. Country Information",
       tag: "Puerto Rico",
-      img: "pr_flag_map_bw_1791649663152.jpg",
+      img: "images/pr_flag_map_bw_1791649663152.jpg",
       bullets: [
         { label: "Country Name", value: "Puerto Rico" },
         { label: "Nickname", value: "Isla del Encanto" },
@@ -47,7 +47,7 @@ const COUNTRY_DATA = {
     card2: {
       title: "2. Food & Treats",
       tag: "Mofongo",
-      img: "mofongo_malta_coloring_1791649366385.jpg",
+      img: "images/mofongo_malta_coloring_1791649366385.jpg",
       bullets: [
         { label: "Main Dish", value: "Mofongo (mashed savory plantains with garlic in a wooden pilón bowl!)" },
         { label: "Sweet Treat", value: "Piragua (shaved ice drizzled with tropical fruit syrup)" },
@@ -57,7 +57,7 @@ const COUNTRY_DATA = {
     card3: {
       title: "3. Music & Dance",
       tag: "Bomba & Plena",
-      img: "bomba_dance_coloring_1791649428063.jpg",
+      img: "images/bomba_dance_coloring_1791649428063.jpg",
       bullets: [
         { label: "Folk Dance", value: "Bomba (dancers challenge drummers with swishing skirts!)" },
         { label: "Storytelling Beat", value: "Plena ('the singing newspaper' of the island)" },
@@ -67,7 +67,7 @@ const COUNTRY_DATA = {
     card4: {
       title: "4. Traditional Clothing",
       tag: "Traje de Jíbaro",
-      img: "traditional_clothing_coloring_1791649442768.jpg",
+      img: "images/traditional_clothing_coloring_1791649442768.jpg",
       bullets: [
         { label: "Boy's Outfit", value: "Straw pava hat, crisp white shirt & red bandana sash" },
         { label: "Girl's Outfit", value: "Flowing white dress with ruffles & island hibiscus flowers" },
@@ -77,7 +77,7 @@ const COUNTRY_DATA = {
     card5: {
       title: "5. Culture & Festival",
       tag: "Vejigante Masks",
-      img: "vejigante_mask_coloring_1791649380499.jpg",
+      img: "images/vejigante_mask_coloring_1791649380499.jpg",
       bullets: [
         { label: "Carnival Tradition", value: "Vejigante masks for Ponce Carnival & Fiesta Santiago Apóstol" },
         { label: "How It's Made", value: "Crafted from papier-mâché or dried coconuts with many horns!" },
@@ -87,7 +87,7 @@ const COUNTRY_DATA = {
     card6: {
       title: "6. Historic Landmarks",
       tag: "El Morro",
-      img: "castillo_el_morro_bw_1791649678009.jpg",
+      img: "images/castillo_el_morro_bw_1791649678009.jpg",
       bullets: [
         { label: "Seaside Fortress", value: "Castillo San Felipe del Morro (built over 400 years ago!)" },
         { label: "Iconic Tower", value: "Garitas (sentry lookout towers perched over crashing waves)" },
@@ -99,7 +99,7 @@ const COUNTRY_DATA = {
         id: "bad_bunny",
         name: "Bad Bunny (Benito)",
         role: "Global Music Superstar & Grammy Icon",
-        img: "bad_bunny_landscape_1791650572668.jpg",
+        img: "images/bad_bunny_landscape_1791650572668.jpg",
         bullets: [
           { label: "Full Name", value: "Benito Antonio Martínez Ocasio" },
           { label: "Born", value: "Vega Baja, Puerto Rico" },
@@ -151,7 +151,7 @@ const COUNTRY_DATA = {
     card8: {
       title: "8. Language & Nature",
       tag: "Coquí Frog",
-      img: "coqui_frog_coloring_1791649457119.jpg",
+      img: "images/coqui_frog_coloring_1791649457119.jpg",
       bullets: [
         { label: "Official Language", value: "Spanish & English" },
         { label: "Beloved Island Mascot", value: "The tiny Coquí tree frog (only 1 inch long!)" },
@@ -164,7 +164,7 @@ const COUNTRY_DATA = {
         id: "glowing_water",
         title: "Glowing Bay",
         subtitle: "Mosquito Bay, Vieques",
-        img: "glowing_water_coloring_1791650764522.jpg",
+        img: "images/glowing_water_coloring_1791650764522.jpg",
         caption: "Bioluminescent waters light up with glowing blue magic whenever fish or paddles touch it!",
         kidExplanation: "Tiny creatures in the water light up like neon blue glow-sticks when you splash your hands!"
       },
@@ -172,7 +172,7 @@ const COUNTRY_DATA = {
         id: "plane_clapping",
         title: "Airport Clap",
         subtitle: "San Juan Landing",
-        img: "plane_clapping_coloring_1791650782941.jpg",
+        img: "images/plane_clapping_coloring_1791650782941.jpg",
         caption: "Passengers burst into applause and cheer when landing in San Juan to celebrate coming home!",
         kidExplanation: "When the airplane wheels touch down in Puerto Rico, the whole plane claps and cheers with happiness!"
       },
@@ -180,7 +180,7 @@ const COUNTRY_DATA = {
         id: "pirate_gold",
         title: "Pirate Gold",
         subtitle: "Cabo Rojo Caves",
-        img: "pirate_treasure_coloring_1791650801521.jpg",
+        img: "images/pirate_treasure_coloring_1791650801521.jpg",
         caption: "Pirate Roberto Cofresí hid treasure chests in sea caves along the beaches of Cabo Rojo!",
         kidExplanation: "A real pirate used to sail the Caribbean and hid secret chests filled with gold inside beach caves!"
       },
