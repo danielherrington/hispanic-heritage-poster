@@ -1,0 +1,121 @@
+/* Poster Board Builder Stylesheet */
+
+@layer utilities {
+  .bubble-letters {
+    font-family: 'Arial Black', Impact, sans-serif;
+    color: #ffffff;
+    -webkit-text-stroke: 3px #0f172a;
+    text-stroke: 3px #0f172a;
+    paint-order: stroke fill;
+    letter-spacing: 0.05em;
+  }
+
+  .bubble-letters-lg {
+    font-family: 'Arial Black', Impact, sans-serif;
+    color: #ffffff;
+    -webkit-text-stroke: 4.5px #0f172a;
+    text-stroke: 4.5px #0f172a;
+    paint-order: stroke fill;
+    letter-spacing: 0.06em;
+  }
+}
+
+/* Screen styling for page sheets */
+.page-sheet {
+  width: 8.5in;
+  min-height: 11in;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.poster-card {
+  width: 7.7in;
+  height: 4.8in;
+  box-sizing: border-box;
+  border: 3px dashed #0f172a;
+  background-color: #ffffff;
+}
+
+/* Card image box sizing */
+.card-img-box {
+  width: 5.2in;
+  height: 4.0in;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img-box img,
+.card-img-box svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Card facts text box sizing */
+.card-info-box {
+  width: 2.1in;
+  height: 4.0in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid #e2e8f0;
+  padding-left: 0.75rem;
+}
+
+/* Interactive Board Mockup (28" x 22") */
+.board-mockup-container {
+  background: radial-gradient(circle at top left, #fef3c7, #fed7aa);
+  border: 4px solid #f59e0b;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(0,0,0,0.06);
+}
+
+/* Print Specific Rules */
+@media print {
+  body {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #000000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  #printable-sheets {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .page-sheet {
+    page-break-after: always !important;
+    break-after: page !important;
+    margin: 0 auto !important;
+    padding: 0.4in 0.4in !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 8.5in !important;
+    height: 11in !important;
+    box-sizing: border-box !important;
+  }
+
+  @page {
+    size: letter portrait;
+    margin: 0;
+  }
+
+  /* Force pure black borders and colorable white interiors in print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
