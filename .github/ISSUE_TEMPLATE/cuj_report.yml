@@ -1,0 +1,67 @@
+name: "🚨 Critical User Journey (CUJ) Friction Report"
+description: "Report how the poster builder or school culture display fails your workflow or leaves you underserved."
+title: "[CUJ]: "
+labels: ["cuj-report", "cuj:unreviewed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Tell us how this product is underserving you.
+        We build features around **Critical User Journeys (CUJs)**. Fill out the Mad Libs below to describe the exact friction you're experiencing.
+
+  - type: textarea
+    id: want_to
+    attributes:
+      label: "I want to..."
+      description: "What is the primary goal you are trying to accomplish?"
+      placeholder: "e.g., generate a poster kit for a country not currently listed..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: avoiding
+    attributes:
+      label: "while avoiding..."
+      description: "What is the painful workaround, friction, extra fee, or manual loop in your way?"
+      placeholder: "e.g., manually drawing flags or searching for coloring pages that aren't age-appropriate..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: so_that
+    attributes:
+      label: "so that I can..."
+      description: "What is the ultimate, high-value outcome or benefit?"
+      placeholder: "e.g., help my child finish their cultural display board on time with confidence."
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_workaround
+    attributes:
+      label: "What is your current workaround?"
+      description: "How are you dealing with this right now? (e.g. Google Docs, PowerPoint, manual drawing)"
+      placeholder: "e.g., We currently use Google Slides and try to resize images to fit letter paper..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: "How often do you encounter this friction?"
+      options:
+        - "Daily / Multiple times a week"
+        - "Weekly"
+        - "Monthly"
+        - "Occasionally / A few times a year"
+    validations:
+      required: true
+
+  - type: input
+    id: contact_email
+    attributes:
+      label: "Email for status notifications (Optional)"
+      description: "If provided, we will notify you when this CUJ has been implemented and shipped."
+      placeholder: "parent@example.com"
+    validations:
+      required: false

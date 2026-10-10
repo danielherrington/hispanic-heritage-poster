@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Critical User Journey (CUJ) Intake • Country Poster Kit</title>
+  <style>
+    :root {
+      --bg: #09090b;
+      --card-bg: #18181b;
+      --border: #27272a;
+      --text: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--text); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 24px; }
+    .cuj-container { width: 100%; max-width: 640px; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5); }
+    
+    .header { margin-bottom: 24px; }
+    .badge { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: rgba(37, 99, 235, 0.2); color: #60a5fa; margin-bottom: 12px; }
+    h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+    p.subtitle { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+    .madlibs-box { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+    .field-group { display: flex; flex-direction: column; gap: 6px; }
+    .field-label { font-size: 14px; font-weight: 600; color: #93c5fd; }
+    .madlib-input { width: 100%; background: #09090b; border: 1px solid var(--border); border-radius: 8px; color: var(--text); padding: 12px 14px; font-size: 14px; outline: none; transition: border-color 0.2s; resize: vertical; min-height: 52px; }
+    .madlib-input:focus { border-color: var(--accent); }
+
+    .extra-fields { border-top: 1px solid var(--border); padding-top: 20px; display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+    .form-input { width: 100%; background: #09090b; border: 1px solid var(--border); border-radius: 8px; color: var(--text); padding: 10px 14px; font-size: 14px; outline: none; }
+    .form-input:focus { border-color: var(--accent); }
+    .helper-text { font-size: 12px; color: var(--text-muted); }
+
+    .btn-submit { width: 100%; background: var(--accent); color: #fff; font-weight: 700; font-size: 15px; border: none; border-radius: 8px; padding: 14px; cursor: pointer; transition: background 0.2s; }
+    .btn-submit:hover { background: var(--accent-hover); }
+
+    .success-msg { display: none; text-align: center; padding: 24px; }
+    .success-msg h2 { color: #4ade80; font-size: 20px; margin-bottom: 8px; }
+    .success-msg p { color: var(--text-muted); font-size: 14px; }
+    .back-link { display: inline-block; margin-top: 16px; color: #60a5fa; text-decoration: none; font-size: 13px; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <div class="cuj-container" id="cujContainer">
+    <div class="header">
+      <span class="badge">CUJ-Driven Development (CDD)</span>
+      <h1>Where is this poster builder underserving you?</h1>
+      <p class="subtitle">Tell us where school project preparation creates friction in your home or classroom. We build new country templates and features directly around verified Critical User Journeys.</p>
+    </div>
+
+    <form id="cujForm">
+      <div class="madlibs-box">
+        <div class="field-group">
+          <label class="field-label" for="wantTo">I want to...</label>
+          <textarea id="wantTo" class="madlib-input" required placeholder="e.g., generate a poster kit for a country not currently listed or add custom sports icons"></textarea>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="avoiding">while avoiding...</label>
+          <textarea id="avoiding" class="madlib-input" required placeholder="e.g., spending hours searching Google for low-res coloring pages that waste black ink"></textarea>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="soThat">so that I can...</label>
+          <textarea id="soThat" class="madlib-input" required placeholder="e.g., help my child finish their cultural display on time and feel proud presenting in class"></textarea>
+        </div>
+      </div>
+
+      <div class="extra-fields">
+        <div class="field-group">
+          <label class="helper-text" for="workaround">What is your current workaround? (Optional)</label>
+          <input type="text" id="workaround" class="form-input" placeholder="e.g. We tried using PowerPoint, but the paper sizes were all misaligned" />
+        </div>
+
+        <div class="field-group">
+          <label class="helper-text" for="email">Your Email for Shipping Notification (Optional)</label>
+          <input type="email" id="email" class="form-input" placeholder="parent@example.com" />
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">Report Critical User Journey 🚀</button>
+      <div style="text-align: center; margin-top: 14px;">
+        <a href="index.html" class="back-link">← Return to Poster Board Builder</a>
+      </div>
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      <h2>🎉 Journey Reported!</h2>
+      <p>Your friction report has been captured for engineering review. Opening a pre-filled GitHub Issue for formal case study synthesis.</p>
+      <a href="index.html" class="back-link">← Return to Poster Board Builder</a>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('cujForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const wantTo = document.getElementById('wantTo').value.trim();
+      const avoiding = document.getElementById('avoiding').value.trim();
+      const soThat = document.getElementById('soThat').value.trim();
+      const workaround = document.getElementById('workaround').value.trim();
+
+      // Dispatch to GitHub Issues directly
+      const issueTitle = encodeURIComponent(`[CUJ]: I want to ${wantTo.substring(0, 50)}...`);
+      const issueBody = encodeURIComponent(
+        `### Critical User Journey Report\n\n` +
+        `**I want to...**\n${wantTo}\n\n` +
+        `**while avoiding...**\n${avoiding}\n\n` +
+        `**so that I can...**\n${soThat}\n\n` +
+        `**Current Workaround:**\n${workaround || 'None'}\n\n` +
+        `*Submitted via CUJ web widget.*`
+      );
+
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+
+      const githubIssueUrl = `https://github.com/danielherrington/hispanic-heritage-poster/issues/new?title=${issueTitle}&body=${issueBody}&labels=cuj-report`;
+      window.open(githubIssueUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
